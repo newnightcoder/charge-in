@@ -3,8 +3,8 @@ import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import { LogoText } from "../components";
 
-const Root = styled(Container)<ContainerProps>(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
+const PageContainer = styled(Container)<ContainerProps>(({ theme }) => ({
+  backgroundColor: theme.palette.white.main,
   height: "100vh",
   width: "100vw",
   display: "flex",
@@ -21,11 +21,11 @@ const linkStyle = {
 
 const Home = () => {
   return (
-    <Root maxWidth={false}>
+    <PageContainer maxWidth={false}>
       <Link to="/login" style={linkStyle}>
         <LogoText width="50%" maxWidth="600px" />
       </Link>
-    </Root>
+    </PageContainer>
   );
 };
 
