@@ -20,6 +20,9 @@ declare module "@mui/material/styles" {
       light: string;
       dark: string;
     };
+    darkBlue: {
+      main: string;
+    };
   }
 
   interface PaletteOptions {
@@ -40,6 +43,9 @@ declare module "@mui/material/styles" {
       main: React.CSSProperties["color"];
       light: React.CSSProperties["color"];
       dark: React.CSSProperties["color"];
+    };
+    darkBlue: {
+      main: React.CSSProperties["color"];
     };
   }
 }

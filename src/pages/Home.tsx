@@ -1,12 +1,12 @@
-import Container, { ContainerProps } from "@mui/material/Container";
+import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import { LogoText } from "../components";
 
-const PageContainer = styled(Container)<ContainerProps>(({ theme }) => ({
-  backgroundColor: theme.palette.white.main,
-  height: "100vh",
-  width: "100vw",
+const PageContainer = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.emerald.main,
+  minHeight: "100vh",
+  width: "100%",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -21,9 +21,9 @@ const linkStyle = {
 
 const Home = () => {
   return (
-    <PageContainer maxWidth={false}>
+    <PageContainer>
       <Link to="/login" style={linkStyle}>
-        <LogoText width="50%" maxWidth="600px" />
+        <LogoText width="50%" maxWidth="600px" color="white" />
       </Link>
     </PageContainer>
   );
