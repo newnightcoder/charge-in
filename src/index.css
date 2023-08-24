@@ -20,8 +20,8 @@ body {
   scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
 }
 .styled-scrollbar-menu::-webkit-scrollbar {
-  width: 10px; /* Mostly for vertical scrollbars */
-  height: 10px; /* Mostly for horizontal scrollbars */
+  width: 7px; /* Mostly for vertical scrollbars */
+  height: 7px; /* Mostly for horizontal scrollbars */
 }
 .styled-scrollbar-menu::-webkit-scrollbar-thumb {
   /* Foreground */

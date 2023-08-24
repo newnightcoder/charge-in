@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
+import { MenuDropdown } from ".";
 import { button } from "../Buttons";
-import MenuDropdown from "./MenuDropdown";
 import { MenuSectionProps } from "./MenuSection";
 
 const MenuDropdownSection = ({ sectionTitle }: MenuSectionProps) => {

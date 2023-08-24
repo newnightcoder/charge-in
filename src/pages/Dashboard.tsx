@@ -1,6 +1,6 @@
-import { Box, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { Menu } from "../components";
+import { DashboardComponent, Menu } from "../components";
 
 const PageContainer = styled(Box)(({ theme }) => ({
   height: "100vh",
@@ -27,9 +27,7 @@ const Dashboard = () => {
         <Menu />
       </Box>
       <Box sx={{ border: `4px solid black}` }}>
-        <Grid container direction={"column"}>
-          <Box sx={{ height: "100%" }}>dashboard</Box>
-        </Grid>
+        <DashboardComponent />
       </Box>
     </PageContainer>
   );

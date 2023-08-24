@@ -1,9 +1,7 @@
 import { Grid } from "@mui/material";
+import { MenuBtn, MenuDropdownSection, MenuSection } from ".";
 import { LogoText } from "../../components";
 import { button } from "../Buttons";
-import MenuBtn from "./MenuBtn";
-import MenuDropdownSection from "./MenuDropdownSection";
-import MenuSection from "./MenuSection";
 
 const Menu = () => {
   const sections = ["opportunités", "utilisateurs", "données"];

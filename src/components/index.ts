@@ -1,3 +1,4 @@
+export { default as DashboardComponent } from "./Dashboard/DashboardComponent";
 export { default as LoginForm } from "./LoginForm";
 export { default as LogoText } from "./LogoText";
 export { default as Menu } from "./Menu/Menu";
