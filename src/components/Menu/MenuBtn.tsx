@@ -11,6 +11,7 @@ import ViewKanbanIcon from "@mui/icons-material/ViewKanban";
 import { Button } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { HTMLAttributes } from "react";
+import { button } from "../Buttons";
 
 interface MenuBtnProps {
   btnName: string;
@@ -21,31 +22,6 @@ interface MenuBtnProps {
   active?: HTMLAttributes<HTMLButtonElement>;
 }
 
-export const button = {
-  accueil: "Accueil",
-  opportunités: {
-    maisons: "Maisons",
-    appartements: "Appartements",
-    études: "Études",
-  },
-  sous_menu: {
-    encours: "En cours",
-    archives: "Archivés",
-  },
-
-  utilisateurs: {
-    admin: "CEO & Admins",
-    managers: "Project Managers",
-    installateurs: "Installateurs",
-    clients: "Clients B2C",
-  },
-  données: {
-    bornes: "Bornes",
-    vehicules: "Véhicules",
-    accessoires: "Accessoires",
-    objectifs: "Objectifs",
-  },
-};
 const MenuBtn = ({
   btnName,
   dropdown,

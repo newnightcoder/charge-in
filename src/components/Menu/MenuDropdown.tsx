@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AnimateHeight from "react-animate-height";
-import MenuBtn, { button } from "./MenuBtn";
+import { button } from "../Buttons";
+import MenuBtn from "./MenuBtn";
 
 interface MenuDropdownProps {
   btnName: string;

@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import { LogoText } from "../../components";
-import MenuBtn, { button } from "./MenuBtn";
+import { button } from "../Buttons";
+import MenuBtn from "./MenuBtn";
 import MenuDropdownSection from "./MenuDropdownSection";
 import MenuSection from "./MenuSection";
 

@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import { button } from "./MenuBtn";
+import { button } from "../Buttons";
 import MenuDropdown from "./MenuDropdown";
 import { MenuSectionProps } from "./MenuSection";
 
