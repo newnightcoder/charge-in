@@ -57,10 +57,10 @@ const LoginForm = () => {
               Adresse mail
             </label>
             <OutlinedInput
+              type="email"
               id="email"
               name="usrname"
               placeholder="adresse@mail.com"
-              type="email"
               sx={inputStyle}
               autoComplete="new-password"
             />
@@ -73,10 +73,10 @@ const LoginForm = () => {
               Mot de passe
             </label>
             <OutlinedInput
+              type="password"
               id="password"
               name="pass"
               placeholder="*****"
-              type="password"
               sx={inputStyle}
               autoComplete="new-password"
             />

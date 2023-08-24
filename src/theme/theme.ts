@@ -33,6 +33,9 @@ export const theme = createTheme({
     darkBlue: {
       main: "#0C354F",
     },
+    info: {
+      main: "#0C354F",
+    },
   },
   typography: {
     fontFamily: ["Poppins", "sans-serif"].join(","),
