@@ -1,15 +1,15 @@
 import { Box, Grid } from "@mui/material";
-import { green } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
 import { Menu } from "../components";
 
 const PageContainer = styled(Box)(({ theme }) => ({
-  minHeight: "100vh",
+  height: "100vh",
   display: "grid",
   gridTemplateColumns: "minmax(200px, 350px) 1fr",
   [theme.breakpoints.down("md")]: {
     gridTemplateColumns: "1fr",
   },
+  overflow: "hidden",
 }));
 
 const Dashboard = () => {
@@ -18,8 +18,10 @@ const Dashboard = () => {
       <Box
         sx={{
           width: "auto",
+          height: "inherit",
           display: { xs: "none", md: "flex" },
-          border: `5px solid ${green[700]}`,
+          flexDirection: "column",
+          backgroundColor: "darkBlue.main",
         }}
       >
         <Menu />

@@ -32,6 +32,7 @@ export const theme = createTheme({
     },
     darkBlue: {
       main: "#0C354F",
+      light: "#224a68",
     },
     info: {
       main: "#0C354F",

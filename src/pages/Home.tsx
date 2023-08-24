@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <PageContainer>
       <Link to="/login" style={linkStyle}>
-        <LogoText width="50%" maxWidth="600px" color="white" />
+        <LogoText height="10vh" color="white" />
       </Link>
     </PageContainer>
   );

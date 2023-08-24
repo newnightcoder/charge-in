@@ -8,6 +8,7 @@ const Login = () => {
     minHeight: "100vh",
     width: "100%",
     paddingTop: "1.25rem",
+    paddingBottom: "1.75rem",
     display: "grid",
     gridTemplateRows: "min-content 1fr",
     placeItems: "center",
@@ -21,6 +22,7 @@ const Login = () => {
           width: "100%",
           maxWidth: "1600px",
           px: 5,
+          pb: 4,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -34,8 +36,7 @@ const Login = () => {
             &lt; Retour vers la page d'accueil
           </Typography>
         </Link>
-
-        <LogoText color="emerald" width="120px" />
+        <LogoText color="emerald" height="25px" />
       </Box>
       <Paper
         elevation={4}

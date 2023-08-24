@@ -1,33 +1,67 @@
+import AddIcon from "@mui/icons-material/Add";
+import BusinessIcon from "@mui/icons-material/Business";
 import ConstructionOutlinedIcon from "@mui/icons-material/ConstructionOutlined";
 import DirectionsCarOutlinedIcon from "@mui/icons-material/DirectionsCarOutlined";
 import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
+import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
+import HouseIcon from "@mui/icons-material/House";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import ViewKanbanIcon from "@mui/icons-material/ViewKanban";
 import { Button } from "@mui/material";
+import { grey } from "@mui/material/colors";
+import { HTMLAttributes } from "react";
 
 interface MenuBtnProps {
   btnName: string;
+  dropdown?: boolean;
+  dropdownOption?: boolean;
+  open?: boolean;
+  onClick?: () => void;
+  active?: HTMLAttributes<HTMLButtonElement>;
 }
 
-const MenuBtn = ({ btnName }: MenuBtnProps) => {
-  const button = {
-    utilisateurs: {
-      admin: "CEO & Admins",
-      managers: "Project Managers",
-      installateurs: "Installateurs",
-      clients: "Clients B2C",
-    },
-    données: {
-      bornes: "Bornes",
-      vehicules: "Véhicules",
-      accessoires: "Accessoires",
-      objectifs: "Objectifs",
-    },
-  };
+export const button = {
+  accueil: "Accueil",
+  opportunités: {
+    maisons: "Maisons",
+    appartements: "Appartements",
+    études: "Études",
+  },
+  sous_menu: {
+    encours: "En cours",
+    archives: "Archivés",
+  },
 
+  utilisateurs: {
+    admin: "CEO & Admins",
+    managers: "Project Managers",
+    installateurs: "Installateurs",
+    clients: "Clients B2C",
+  },
+  données: {
+    bornes: "Bornes",
+    vehicules: "Véhicules",
+    accessoires: "Accessoires",
+    objectifs: "Objectifs",
+  },
+};
+const MenuBtn = ({
+  btnName,
+  dropdown,
+  onClick,
+  dropdownOption,
+}: MenuBtnProps) => {
   const BtnIcon = () => {
     switch (btnName) {
+      case button.accueil:
+        return <GridViewRoundedIcon />;
+      case button.opportunités.maisons:
+        return <HouseIcon />;
+      case button.opportunités.appartements:
+        return <HouseIcon />;
+      case button.opportunités.études:
+        return <BusinessIcon />;
       case button.utilisateurs.admin:
         return <VerifiedUserIcon />;
       case button.utilisateurs.managers:
@@ -51,14 +85,28 @@ const MenuBtn = ({ btnName }: MenuBtnProps) => {
 
   return (
     <Button
-      variant="contained"
-      color="info"
+      variant={dropdownOption ? "text" : "contained"}
+      color={dropdownOption ? "inherit" : "info"}
       fullWidth
-      sx={{ textTransform: "unset", justifyContent: "flex-start" }}
       disableElevation
       startIcon={<BtnIcon />}
+      onClick={dropdown ? onClick : undefined}
+      sx={{
+        textTransform: "unset",
+        justifyContent: "flex-start",
+        borderBottomLeftRadius: dropdown ? "0" : "4px",
+        borderBottomRightRadius: dropdown ? "0" : "4px",
+        color: dropdownOption ? grey[500] : "",
+        "&:hover": {
+          color: dropdownOption ? "turquoise.main" : "",
+        },
+        // "&:active": {
+        //   backgroundColor: "primary.dark",
+        // },
+      }}
     >
       {btnName}
+      {dropdown && <AddIcon sx={{ position: "absolute", right: "10px" }} />}
     </Button>
   );
 };

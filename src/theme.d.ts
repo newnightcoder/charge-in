@@ -22,6 +22,7 @@ declare module "@mui/material/styles" {
     };
     darkBlue: {
       main: string;
+      light: string;
     };
   }
 
@@ -46,6 +47,7 @@ declare module "@mui/material/styles" {
     };
     darkBlue: {
       main: React.CSSProperties["color"];
+      light: React.CSSProperties["color"];
     };
   }
 }

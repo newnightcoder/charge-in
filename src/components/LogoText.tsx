@@ -1,18 +1,24 @@
 import { useLocation } from "react-router-dom";
 
 interface Props {
-  width: string;
-  maxWidth?: string;
-  color: "white" | "emerald";
+  height: string;
+  color: "white" | "emerald" | "turquoise" | "red";
 }
 
-const LogoText = ({ width, maxWidth, color }: Props) => {
-  const fillColor = color === "white" ? "#F4F8F6" : "#369C96";
+const LogoText = ({ height, color }: Props) => {
+  const fillColor =
+    color === "white"
+      ? "#F4F8F6"
+      : color === "emerald"
+      ? "#369C96"
+      : color === "turquoise"
+      ? "#4BD2CA"
+      : "";
   const { pathname } = useLocation();
   const isLandingPage = pathname === "/";
   return (
     <svg
-      style={{ width, maxWidth }}
+      style={{ height }}
       viewBox="0 0 298 65"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

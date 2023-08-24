@@ -1,36 +1,50 @@
-import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
-import { Box, Button, Grid, Typography } from "@mui/material";
-import { grey } from "@mui/material/colors";
+import { Grid } from "@mui/material";
 import { LogoText } from "../../components";
+import MenuBtn, { button } from "./MenuBtn";
+import MenuDropdownSection from "./MenuDropdownSection";
 import MenuSection from "./MenuSection";
 
 const Menu = () => {
+  const sections = ["opportunités", "utilisateurs", "données"];
+
   return (
     <Grid
       container
       direction={"column"}
-      sx={{ backgroundColor: "darkBlue.main", p: 4 }}
+      className={"styled-scrollbar-menu"}
+      wrap="nowrap"
+      rowSpacing={4}
+      sx={{
+        height: "auto",
+        justifyContent: "flex-start",
+        backgroundColor: "darkBlue.main",
+        overflowY: "scroll",
+        py: 4,
+        px: 3,
+      }}
     >
-      <LogoText width="50%" color="emerald" />
-      <Button
-        variant="contained"
-        color="info"
-        sx={{ textTransform: "unset", justifyContent: "flex-start" }}
-        disableElevation
-        startIcon={<GridViewRoundedIcon />}
-      >
-        Accueil
-      </Button>
-      <Box sx={{ width: "100%" }}>
-        <Typography variant="overline" color={grey[500]} display="block">
-          opportunités
-        </Typography>
-      </Box>
-      <>
-        {["utilisateurs", "données"].map((title, i) => (
-          <MenuSection key={i} sectionTitle={title} />
-        ))}
-      </>
+      <Grid item>
+        <LogoText height="30px" color="emerald" />
+      </Grid>
+
+      <Grid item>
+        <Grid container direction={"column"} rowSpacing={1}>
+          <Grid item>
+            <MenuBtn btnName={button.accueil} />
+          </Grid>
+          <Grid item container direction={"column"} rowSpacing={1}>
+            {sections.map((title, i) =>
+              title === sections[0] ? (
+                <Grid item key={i}>
+                  <MenuDropdownSection sectionTitle={title} />
+                </Grid>
+              ) : (
+                <MenuSection sectionTitle={title} key={i} />
+              )
+            )}
+          </Grid>
+        </Grid>
+      </Grid>
     </Grid>
   );
 };
