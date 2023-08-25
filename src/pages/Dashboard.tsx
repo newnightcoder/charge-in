@@ -26,7 +26,7 @@ const Dashboard = () => {
       >
         <Menu />
       </Box>
-      <Box sx={{ border: `4px solid black}` }}>
+      <Box>
         <DashboardComponent />
       </Box>
     </PageContainer>

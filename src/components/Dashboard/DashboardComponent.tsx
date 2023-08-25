@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import { UserBanner } from ".";
+import { UserBanner } from "./UserBanner";
 
 const Dashboard = () => {
   return (

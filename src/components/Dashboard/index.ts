@@ -1,1 +1,1 @@
-export { default as UserBanner } from "./UserBanner";
+export { default as DashboardComponent } from "./DashboardComponent";
