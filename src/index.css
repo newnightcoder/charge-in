@@ -20,14 +20,33 @@ body {
   scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
 }
 .styled-scrollbar-menu::-webkit-scrollbar {
-  width: 7px; /* Mostly for vertical scrollbars */
-  height: 7px; /* Mostly for horizontal scrollbars */
+  width: 12px; /* Mostly for vertical scrollbars */
+  height: 12px; /* Mostly for horizontal scrollbars */
 }
 .styled-scrollbar-menu::-webkit-scrollbar-thumb {
   /* Foreground */
   background: var(--scrollbar-foreground);
 }
 .styled-scrollbar-menu::-webkit-scrollbar-track {
+  /* Background */
+  background: var(--scrollbar-background);
+}
+
+.styled-scrollbar-dashboard {
+  --scrollbar-foreground: #0c354f;
+  --scrollbar-background: #f4f8f6;
+  /* Foreground, Background */
+  scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+}
+.styled-scrollbar-dashboard::-webkit-scrollbar {
+  width: 12px; /* Mostly for vertical scrollbars */
+  height: 12px; /* Mostly for horizontal scrollbars */
+}
+.styled-scrollbar-dashboard::-webkit-scrollbar-thumb {
+  /* Foreground */
+  background: var(--scrollbar-foreground);
+}
+.styled-scrollbar-dashboard::-webkit-scrollbar-track {
   /* Background */
   background: var(--scrollbar-background);
 }

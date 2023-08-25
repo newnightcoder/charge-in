@@ -3,13 +3,7 @@ import { Greeting, NotificationBtn, ProfileBtn } from ".";
 
 const UserBanner = () => {
   return (
-    <Grid
-      container
-      item
-      direction="column"
-      rowSpacing={1.5}
-      sx={{ pt: 1.5, px: 3 }}
-    >
+    <Grid container item direction="column" rowSpacing={1.5}>
       <Grid
         container
         item

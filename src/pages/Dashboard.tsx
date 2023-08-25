@@ -5,7 +5,7 @@ import { DashboardComponent, Menu } from "../components";
 const PageContainer = styled(Box)(({ theme }) => ({
   height: "100vh",
   display: "grid",
-  gridTemplateColumns: "minmax(200px, 350px) 1fr",
+  gridTemplateColumns: "minmax(200px, 300px) 1fr",
   [theme.breakpoints.down("md")]: {
     gridTemplateColumns: "1fr",
   },
@@ -26,7 +26,17 @@ const Dashboard = () => {
       >
         <Menu />
       </Box>
-      <Box>
+      <Box
+        className={"styled-scrollbar-dashboard"}
+        sx={{
+          height: "inherit",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          backgroundColor: "white.main",
+        }}
+      >
         <DashboardComponent />
       </Box>
     </PageContainer>
