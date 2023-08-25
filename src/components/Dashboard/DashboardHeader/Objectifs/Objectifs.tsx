@@ -1,25 +1,7 @@
-import { Button, Grid, styled, Typography } from "@mui/material";
-import { grey } from "@mui/material/colors";
-import Objectif from "./Objectif";
+import { Grid } from "@mui/material";
+import { Objectif, ObjectifsBtn, ObjectifsTitle } from ".";
 
 const Objectifs = () => {
-  const ObjectifBtn = styled(Button)(({ theme }) => ({
-    backgroundImage: `linear-gradient(${theme.palette.info.main},${theme.palette.info.main})`,
-    textTransform: "lowercase",
-    padding: "5px 18px",
-    fontSize: ".8rem",
-    color: grey[500],
-    borderRadius: "10px",
-    "&:hover": {
-      backgroundImage: "linear-gradient(117deg, #8BDFDA, #369C96)",
-      color: grey[50],
-    },
-    "&:active": {
-      backgroundImage: "linear-gradient(117deg, #8BDFDA, #369C96)",
-      color: grey[50],
-    },
-  }));
-
   const objectifs = [
     { name: "50 Partenaires", percent: 76 },
     { name: "100 installateurs", percent: 45 },
@@ -30,73 +12,35 @@ const Objectifs = () => {
     <Grid
       container
       direction={"column"}
-      rowSpacing={2.5}
+      rowGap={2}
       sx={{
-        backgroundImage: "linear-gradient(116deg,#094972, #326B8F)",
         p: 4,
+        backgroundImage: "linear-gradient(116deg,#094972, #326B8F)",
         borderRadius: "12px",
-        // gap: 2.5,
+        // "& >*+*": {
+        //   marginTop: "16px",
+        // },
       }}
     >
-      <Grid item container direction={"row"} columnSpacing={3}>
-        <Grid
-          item
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: 1,
-            // border: "2px solid red",
-          }}
-        >
-          <Typography
-            variant="h2"
-            fontSize={"1.25rem"}
-            fontWeight={700}
-            sx={{ color: "#FFF" }}
-          >
-            Objectifs de
-          </Typography>
-          <Typography
-            variant="h2"
-            fontSize={"1.25rem"}
-            fontWeight={700}
-            sx={{ color: "turquoise.main" }}
-          >
-            Charge-in
-          </Typography>
-        </Grid>
-        <Grid
-          item
-          container
-          columnSpacing={2}
-          sx={{
-            width: "auto",
-            // border: "1px solid red",
-          }}
-        >
-          <Grid item>
-            <ObjectifBtn>1er trimestre</ObjectifBtn>
-          </Grid>
-          <Grid item>
-            <ObjectifBtn>2ème trimestre</ObjectifBtn>
-          </Grid>
-          <Grid item>
-            <ObjectifBtn>3ème trimestre</ObjectifBtn>
-          </Grid>
-          <Grid item>
-            <ObjectifBtn>année 2023</ObjectifBtn>
-          </Grid>
-        </Grid>
+      <Grid
+        item
+        container
+        columnGap={2}
+        rowGap={1.5}
+        sx={{ alignItems: "center" }}
+      >
+        <ObjectifsTitle />
+        <ObjectifsBtn />
       </Grid>
 
       <Grid
         item
         container
-        columnSpacing={2}
+        columnGap={2}
+        rowGap={1}
         sx={{
-          width: "auto",
           justifyContent: "center",
-          // border: "1px solid red",
+          "& > *+* ": {},
         }}
       >
         {objectifs.map((obj, i) => (

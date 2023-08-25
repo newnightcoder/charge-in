@@ -1,8 +1,12 @@
 import { Grid } from "@mui/material";
+import useWindowSize from "../../hooks/useWindowSize";
+import Menu from "../Menu/Menu";
 import { DashboardHeader } from "./DashboardHeader";
 import { UserBanner } from "./UserBanner";
 
 const Dashboard = () => {
+  const { width } = useWindowSize();
+
   return (
     <Grid
       container
@@ -11,10 +15,11 @@ const Dashboard = () => {
         maxWidth: "1200px",
         justifyContent: "flex-start",
         backgroundColor: "white.main",
-        px: 4,
-        py: 2,
+        px: { xs: 2, md: 4 },
+        py: { xs: 1, md: 2 },
       }}
     >
+      {width < 900 && <Menu />}
       <UserBanner />
       <DashboardHeader />
     </Grid>

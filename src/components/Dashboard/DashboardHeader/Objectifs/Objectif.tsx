@@ -17,9 +17,7 @@ const Objectif = ({ objectif }: ObjectifProps) => {
     complété: "Complété",
   };
 
-  const objWidth = "265px";
   const circlePgWidth = "110px";
-  const gap = "8px";
   const objTextWidth = "50%";
 
   useEffect(() => {
@@ -35,10 +33,12 @@ const Objectif = ({ objectif }: ObjectifProps) => {
       container
       sx={{
         justifyContent: "flex-start",
-        height: "110px",
-        minWidth: objWidth,
-        width: `calc(33% - ${gap})`,
-        gap: gap,
+        height: 110,
+        minWidth: "265px",
+        width: "33%",
+        maxWidth: "300px",
+        flexBasis: 1,
+        flexGrow: 1,
         // border: "1px solid white",
       }}
     >
@@ -46,7 +46,11 @@ const Objectif = ({ objectif }: ObjectifProps) => {
         item
         container
         direction={"column"}
-        sx={{ width: objTextWidth, justifyContent: "center" }}
+        sx={{
+          width: objTextWidth,
+          justifyContent: "center",
+          // border: "1px solid yellow",
+        }}
       >
         <Typography variant="subtitle1" color={grey[500]} width="auto" noWrap>
           {objectif.name}
@@ -67,7 +71,7 @@ const Objectif = ({ objectif }: ObjectifProps) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          // border: "1px solid white",
+          // border: "1px solid red",
         }}
       >
         <CircleProgress percent={objectif.percent} />
