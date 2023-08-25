@@ -30,14 +30,15 @@ const Objectifs = () => {
     <Grid
       container
       direction={"column"}
+      rowSpacing={2.5}
       sx={{
         backgroundImage: "linear-gradient(116deg,#094972, #326B8F)",
         p: 4,
         borderRadius: "12px",
-        gap: 2.5,
+        // gap: 2.5,
       }}
     >
-      <Grid item container direction={"row"} sx={{ gap: 3 }}>
+      <Grid item container direction={"row"} columnSpacing={3}>
         <Grid
           item
           sx={{
@@ -67,9 +68,9 @@ const Objectifs = () => {
         <Grid
           item
           container
+          columnSpacing={2}
           sx={{
             width: "auto",
-            gap: 2,
             // border: "1px solid red",
           }}
         >
@@ -91,10 +92,10 @@ const Objectifs = () => {
       <Grid
         item
         container
+        columnSpacing={2}
         sx={{
           width: "auto",
           justifyContent: "center",
-          gap: 2,
           // border: "1px solid red",
         }}
       >
