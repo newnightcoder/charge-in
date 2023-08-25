@@ -4,6 +4,9 @@ import { grey } from "@mui/material/colors";
 const ObjectifsBtn = () => {
   const ObjectifBtn = styled(Button)(({ theme }) => ({
     width: "130px",
+    [theme.breakpoints.down("sm")]: {
+      width: "200px",
+    },
     backgroundImage: `linear-gradient(${theme.palette.info.main},${theme.palette.info.main})`,
     textTransform: "lowercase",
     whiteSpace: "nowrap",
@@ -29,6 +32,8 @@ const ObjectifsBtn = () => {
       rowGap={1}
       sx={{
         width: "auto",
+        alignItems: "center",
+        justifyContent: "center",
         // border: "1px solid white",
       }}
     >
