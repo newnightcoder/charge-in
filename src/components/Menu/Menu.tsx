@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { MenuBtn, MenuDropdownSection, MenuSection } from ".";
 import { LogoText } from "../../components";
 import { RootState } from "../../store";
-import { button } from "../Buttons";
+import { menu } from "../Buttons";
 
 const Menu = () => {
   const sections = ["opportunités", "utilisateurs", "données"];
@@ -47,7 +47,7 @@ const Menu = () => {
       <Grid item>
         <Grid container direction={"column"} rowSpacing={1}>
           <Grid item>
-            <MenuBtn btnName={button.accueil} />
+            <MenuBtn btnName={menu.accueil} />
           </Grid>
           <Grid item container direction={"column"} rowSpacing={1}>
             {sections.map((title, i) =>

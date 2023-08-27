@@ -1,7 +1,6 @@
 import { useState } from "react";
 import AnimateHeight from "react-animate-height";
-import { button } from "../Buttons";
-import MenuBtn from "./MenuBtn";
+import { menu, MenuBtn } from "../Buttons";
 
 interface MenuDropdownProps {
   btnName: string;
@@ -10,7 +9,7 @@ interface MenuDropdownProps {
 const MenuDropdown = ({ btnName }: MenuDropdownProps) => {
   const [animateHeight, setAnimateHeight] = useState<number | "auto">(0);
   const [open, setOpen] = useState<boolean>(false);
-  const options = Object.values(button.sous_menu);
+  const options = Object.values(menu.sous_menu);
 
   const handleClick = () => {
     setAnimateHeight(animateHeight === 0 ? "auto" : 0);

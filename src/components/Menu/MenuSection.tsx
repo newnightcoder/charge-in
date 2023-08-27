@@ -1,7 +1,8 @@
 import { Grid, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { useMemo } from "react";
-import MenuBtn from "./MenuBtn";
+import { menu } from "../Buttons";
+import MenuBtn from "../Buttons/MenuButton/MenuBtn";
 
 export interface MenuSectionProps {
   sectionTitle: string;
@@ -16,26 +17,12 @@ const MenuSection = ({ sectionTitle }: MenuSectionProps) => {
     []
   );
 
-  const buttons = useMemo(
-    () => ({
-      utilisateurs: [
-        "CEO & Admins",
-        "Project Managers",
-        "Installateurs",
-        "Clients B2C",
-      ],
-      données: ["Bornes", "Véhicules", "Accessoires", "Objectifs"],
-    }),
-    []
-  );
-
-  const btnList = useMemo(() => {
-    return sectionTitle === section.utilisateurs
-      ? buttons.utilisateurs
+  const btnList =
+    sectionTitle === section.utilisateurs
+      ? menu.utilisateurs
       : sectionTitle === section.données
-      ? buttons.données
+      ? menu.données
       : [];
-  }, [section, buttons, sectionTitle]);
 
   return (
     <Grid container item direction={"column"} rowSpacing={0.75}>
@@ -45,7 +32,7 @@ const MenuSection = ({ sectionTitle }: MenuSectionProps) => {
         </Typography>
       </Grid>
       <Grid container item direction={"column"} spacing={1.5}>
-        {btnList.map((btn, i) => (
+        {Object.values(btnList).map((btn, i) => (
           <Grid item key={i}>
             <MenuBtn btnName={btn} />
           </Grid>

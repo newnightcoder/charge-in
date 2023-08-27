@@ -1,11 +1,11 @@
 import { Grid, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { MenuDropdown } from ".";
-import { button } from "../Buttons";
+import { menu } from "../Buttons";
 import { MenuSectionProps } from "./MenuSection";
 
 const MenuDropdownSection = ({ sectionTitle }: MenuSectionProps) => {
-  const sections = Object.values(button.opportunités);
+  const sections = Object.values(menu.opportunités);
 
   return (
     <Grid container item direction={"column"} rowSpacing={0.75}>

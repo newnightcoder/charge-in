@@ -11,7 +11,7 @@ import ViewKanbanIcon from "@mui/icons-material/ViewKanban";
 import { Button } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { HTMLAttributes } from "react";
-import { button } from "../Buttons";
+import { menu } from "..";
 
 interface MenuBtnProps {
   btnName: string;
@@ -30,29 +30,29 @@ const MenuBtn = ({
 }: MenuBtnProps) => {
   const BtnIcon = () => {
     switch (btnName) {
-      case button.accueil:
+      case menu.accueil:
         return <GridViewRoundedIcon />;
-      case button.opportunités.maisons:
+      case menu.opportunités.maisons:
         return <HouseIcon />;
-      case button.opportunités.appartements:
+      case menu.opportunités.appartements:
         return <HouseIcon />;
-      case button.opportunités.études:
+      case menu.opportunités.études:
         return <BusinessIcon />;
-      case button.utilisateurs.admin:
+      case menu.utilisateurs.admin:
         return <VerifiedUserIcon />;
-      case button.utilisateurs.managers:
+      case menu.utilisateurs.managers:
         return <PersonOutlineIcon />;
-      case button.utilisateurs.installateurs:
+      case menu.utilisateurs.installateurs:
         return <PersonOutlineIcon />;
-      case button.utilisateurs.clients:
+      case menu.utilisateurs.clients:
         return <PersonOutlineIcon />;
-      case button.données.bornes:
+      case menu.données.bornes:
         return <ElectricBoltIcon />;
-      case button.données.vehicules:
+      case menu.données.vehicules:
         return <DirectionsCarOutlinedIcon />;
-      case button.données.accessoires:
+      case menu.données.accessoires:
         return <ConstructionOutlinedIcon />;
-      case button.données.objectifs:
+      case menu.données.objectifs:
         return <ViewKanbanIcon />;
       default:
         return <></>;

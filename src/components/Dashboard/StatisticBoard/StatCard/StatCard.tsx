@@ -25,7 +25,7 @@ const StatCard = ({ stat }: StatCardProps) => {
     flexDirection: "column",
     alignItems: "flex-start",
     justifyContent: "space-between",
-    bgcolor: "white.main",
+    bgcolor: "#FFF",
     p: 2.5,
     borderRadius: "15px",
   };

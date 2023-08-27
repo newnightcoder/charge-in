@@ -9,7 +9,7 @@ const DashboardHeader = () => {
       item
       direction={"column"}
       rowSpacing={{ xs: 2, md: 5 }}
-      sx={{ py: 2.5, mb: 1.5 }}
+      sx={{ py: 2.5, mb: 2 }}
     >
       <Grid item sx={{ display: "flex", alignItems: "center" }}>
         <BoltOutlined sx={{ color: "primary.main", fontSize: "3rem" }} />

@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import useWindowSize from "../../hooks/useWindowSize";
 import Menu from "../Menu/Menu";
+import Actions from "./Actions";
 import { DashboardHeader } from "./DashboardHeader";
 import { StatisticBoard } from "./StatisticBoard";
 import { UserBanner } from "./UserBanner";
@@ -24,6 +25,7 @@ const Dashboard = () => {
       <UserBanner />
       <DashboardHeader />
       <StatisticBoard />
+      <Actions />
     </Grid>
   );
 };
