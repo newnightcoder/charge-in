@@ -9,8 +9,16 @@ import {
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    navigate("/dashboard");
+  };
+
   const inputStyle = {
     input: {
       padding: "10px",
@@ -24,10 +32,6 @@ const LoginForm = () => {
     "&:autofill .MuiOutlinedInput": {
       backgroundColor: "red",
     },
-  };
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
   };
 
   return (
