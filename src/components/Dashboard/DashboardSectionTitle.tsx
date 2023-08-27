@@ -17,7 +17,7 @@ const DashboardSectionTitle = ({
     <Grid item container columnGap={0.75} width="auto" sx={{ wrap: "nowrap" }}>
       <Typography
         variant="h2"
-        fontSize={"1.25rem"}
+        fontSize={"1.5rem"}
         fontWeight={700}
         sx={{ color: color1 }}
       >
@@ -25,7 +25,7 @@ const DashboardSectionTitle = ({
       </Typography>
       <Typography
         variant="h2"
-        fontSize={"1.25rem"}
+        fontSize={"1.5rem"}
         fontWeight={700}
         sx={{ color: color2 }}
       >

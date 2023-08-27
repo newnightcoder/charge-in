@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import { Objectif, ObjectifsBtn } from ".";
+import { Objectif, ObjectifsBtnContainer } from ".";
 import { theme } from "../../../../theme/theme";
 import DashboardSectionTitle from "../../DashboardSectionTitle";
 
@@ -42,7 +42,7 @@ const Objectifs = () => {
           color1={"#FFF"}
           color2={theme.palette.turquoise.main}
         />
-        <ObjectifsBtn />
+        <ObjectifsBtnContainer />
       </Grid>
 
       <Grid
@@ -50,10 +50,7 @@ const Objectifs = () => {
         container
         columnGap={2}
         rowGap={1}
-        sx={{
-          justifyContent: "center",
-          "& > *+* ": {},
-        }}
+        sx={{ justifyContent: "center" }}
       >
         {objectifs.map((obj, i) => (
           <Objectif key={i} objectif={obj} />
