@@ -4,7 +4,7 @@ import ConstructionOutlinedIcon from "@mui/icons-material/ConstructionOutlined";
 import DirectionsCarOutlinedIcon from "@mui/icons-material/DirectionsCarOutlined";
 import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
-import HouseIcon from "@mui/icons-material/House";
+import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import ViewKanbanIcon from "@mui/icons-material/ViewKanban";
@@ -33,9 +33,9 @@ const MenuBtn = ({
       case menu.accueil:
         return <GridViewRoundedIcon />;
       case menu.opportunités.maisons:
-        return <HouseIcon />;
+        return <HouseOutlinedIcon />;
       case menu.opportunités.appartements:
-        return <HouseIcon />;
+        return <HouseOutlinedIcon />;
       case menu.opportunités.études:
         return <BusinessIcon />;
       case menu.utilisateurs.admin:

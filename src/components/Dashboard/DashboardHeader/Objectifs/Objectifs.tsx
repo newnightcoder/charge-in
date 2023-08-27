@@ -18,6 +18,7 @@ const Objectifs = () => {
   return (
     <Grid
       container
+      item
       direction={"column"}
       rowGap={2}
       sx={{

@@ -8,12 +8,11 @@ const DashboardHome = () => {
     <Grid
       container
       direction={"column"}
+      rowGap={4}
       sx={{
         maxWidth: "1200px",
         justifyContent: "flex-start",
         backgroundColor: "white.main",
-        px: { xs: 2, md: 4 },
-        py: { xs: 1, md: 2 },
       }}
     >
       <DashboardHeader />

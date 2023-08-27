@@ -34,15 +34,17 @@ const Dashboard = () => {
         className={"styled-scrollbar-dashboard"}
         sx={{
           height: "inherit",
+          px: { xs: 2, md: 4 },
+          py: { xs: 1, md: 2 },
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "flex-start",
           backgroundColor: "white.main",
           overflowY: "scroll",
+          gap: 3,
         }}
       >
-        {/* <DashboardComponent /> */}
         <UserBanner />
         {width < 900 && <Menu />}
         <Outlet />

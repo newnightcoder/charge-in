@@ -2,14 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 import { DashboardHome } from "../components";
 import { menu } from "../components/Buttons";
 import { formatRouteName } from "../helpers";
-import { Dashboard, Home, Login, Profil } from "../pages";
+import { Dashboard, Home, Login, MenuPage, Profil } from "../pages";
 
 const sections = [menu.opportunités, menu.utilisateurs, menu.données];
 
 const menuRoutes = sections.flatMap((section) => {
   const routes = Object.values(section).map((val) => ({
     path: `/dashboard/${formatRouteName(val)}`,
-    element: <>{val}</>,
+    element: <MenuPage title={val} />,
   }));
   return routes;
 });

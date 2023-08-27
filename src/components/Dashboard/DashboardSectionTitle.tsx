@@ -2,9 +2,9 @@ import { Grid, Typography } from "@mui/material";
 
 interface DashboardSectionTitleProps {
   str1: string;
-  str2: string;
+  str2?: string;
   color1: string;
-  color2: string;
+  color2?: string;
 }
 
 const DashboardSectionTitle = ({
