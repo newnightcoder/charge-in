@@ -10,9 +10,9 @@ const StatisticGrid = () => {
   return (
     <Grid
       container
-      columnGap={2}
-      rowGap={2}
-      sx={{ justifyContent: { xs: "center", sm: "flex-start" } }}
+      columnGap={2.5}
+      rowGap={2.5}
+      sx={{ justifyContent: { xs: "center", md: "flex-start" } }}
     >
       {stats.map((stat, i) => (
         <Grid item key={i}>

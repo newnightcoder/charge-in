@@ -5,7 +5,7 @@ import DashboardSectionTitle from "./DashboardSectionTitle";
 const Actions = () => {
   const btnWrapperStyle = {
     width: { xs: "75%", md: "300px" },
-    maxWidth: "400px",
+    maxWidth: "450px",
   };
 
   return (
@@ -22,7 +22,7 @@ const Actions = () => {
         item
         columnGap={1.25}
         rowGap={1}
-        sx={{ justifyContent: { xs: "center", md: "" } }}
+        sx={{ justifyContent: { xs: "center", md: "flex-start" } }}
       >
         {Object.values(actions).map((act, i) => (
           <Grid item key={i} sx={btnWrapperStyle}>
