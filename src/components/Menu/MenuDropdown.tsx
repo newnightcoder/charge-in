@@ -1,5 +1,7 @@
 import { useState } from "react";
 import AnimateHeight from "react-animate-height";
+import { useNavigate } from "react-router-dom";
+import { formatRouteName } from "../../helpers";
 import { menu, MenuBtn } from "../Buttons";
 
 interface MenuDropdownProps {
@@ -10,10 +12,12 @@ const MenuDropdown = ({ btnName }: MenuDropdownProps) => {
   const [animateHeight, setAnimateHeight] = useState<number | "auto">(0);
   const [open, setOpen] = useState<boolean>(false);
   const options = Object.values(menu.sous_menu);
+  const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleClickDropdown = () => {
     setAnimateHeight(animateHeight === 0 ? "auto" : 0);
     setOpen((prev) => !prev);
+    navigate(`/dashboard/${formatRouteName(btnName)}`);
   };
 
   return (
@@ -21,7 +25,7 @@ const MenuDropdown = ({ btnName }: MenuDropdownProps) => {
       <MenuBtn
         btnName={btnName}
         dropdown={true}
-        onClick={handleClick}
+        onClick={handleClickDropdown}
         open={open}
       />
 

@@ -1,14 +1,9 @@
 import { Grid } from "@mui/material";
-import useWindowSize from "../../hooks/useWindowSize";
-import Menu from "../Menu/Menu";
 import Actions from "./Actions";
 import { DashboardHeader } from "./DashboardHeader";
 import { StatisticBoard } from "./StatisticBoard";
-import { UserBanner } from "./UserBanner";
 
-const Dashboard = () => {
-  const { width } = useWindowSize();
-
+const DashboardHome = () => {
   return (
     <Grid
       container
@@ -21,8 +16,6 @@ const Dashboard = () => {
         py: { xs: 1, md: 2 },
       }}
     >
-      {width < 900 && <Menu />}
-      <UserBanner />
       <DashboardHeader />
       <StatisticBoard />
       <Actions />
@@ -30,4 +23,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardHome;

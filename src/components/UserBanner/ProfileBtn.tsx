@@ -1,8 +1,11 @@
 import { Box, IconButton } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const ProfileBtn = () => {
+  const navigate = useNavigate();
+
   return (
-    <IconButton>
+    <IconButton onClick={() => navigate("/dashboard/profil")}>
       <Box
         sx={{
           height: { xs: "35px", md: "50px" },

@@ -1,14 +1,17 @@
 import { Grid, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { useMemo } from "react";
-import { menu } from "../Buttons";
-import MenuBtn from "../Buttons/MenuButton/MenuBtn";
+import { useNavigate } from "react-router-dom";
+import { formatRouteName } from "../../helpers";
+import { menu, MenuBtn } from "../Buttons";
 
 export interface MenuSectionProps {
   sectionTitle: string;
 }
 
 const MenuSection = ({ sectionTitle }: MenuSectionProps) => {
+  const navigate = useNavigate();
+
   const section = useMemo(
     () => ({
       utilisateurs: "utilisateurs",
@@ -24,6 +27,10 @@ const MenuSection = ({ sectionTitle }: MenuSectionProps) => {
       ? menu.données
       : [];
 
+  const handleClick = (str: string) => {
+    navigate(`/dashboard/${formatRouteName(str)}`);
+  };
+
   return (
     <Grid container item direction={"column"} rowSpacing={0.75}>
       <Grid item>
@@ -34,7 +41,7 @@ const MenuSection = ({ sectionTitle }: MenuSectionProps) => {
       <Grid container item direction={"column"} spacing={1.5}>
         {Object.values(btnList).map((btn, i) => (
           <Grid item key={i}>
-            <MenuBtn btnName={btn} />
+            <MenuBtn btnName={btn} onClick={() => handleClick(btn)} />
           </Grid>
         ))}
       </Grid>

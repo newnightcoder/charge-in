@@ -1,13 +1,15 @@
 import { Grid } from "@mui/material";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { MenuDropdownSection, MenuSection } from ".";
 import { LogoText } from "../../components";
 import { RootState } from "../../store";
 import { menu, MenuBtn } from "../Buttons";
 
 const Menu = () => {
-  const sections = ["opportunités", "utilisateurs", "données"];
   const isMenuOpen = useSelector((state: RootState) => state.menu.isMenuOpen);
+  const navigate = useNavigate();
+  const sections = ["opportunités", "utilisateurs", "données"];
   const menuStyle = {
     height: "auto",
     width: { xs: "80%", md: 280 },
@@ -47,7 +49,10 @@ const Menu = () => {
       <Grid item>
         <Grid container direction={"column"} rowSpacing={1}>
           <Grid item>
-            <MenuBtn btnName={menu.accueil} />
+            <MenuBtn
+              btnName={menu.accueil}
+              onClick={() => navigate("/dashboard")}
+            />
           </Grid>
           <Grid item container direction={"column"} rowSpacing={1}>
             {sections.map((title, i) =>

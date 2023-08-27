@@ -1,6 +1,8 @@
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { DashboardComponent, Menu } from "../components";
+import { Outlet } from "react-router-dom";
+import { Menu, UserBanner } from "../components";
+import useWindowSize from "../hooks/useWindowSize";
 
 const PageContainer = styled(Box)(({ theme }) => ({
   height: "100vh",
@@ -13,6 +15,8 @@ const PageContainer = styled(Box)(({ theme }) => ({
 }));
 
 const Dashboard = () => {
+  const { width } = useWindowSize();
+
   return (
     <PageContainer>
       <Box
@@ -38,7 +42,10 @@ const Dashboard = () => {
           overflowY: "scroll",
         }}
       >
-        <DashboardComponent />
+        {/* <DashboardComponent /> */}
+        <UserBanner />
+        {width < 900 && <Menu />}
+        <Outlet />
       </Box>
     </PageContainer>
   );

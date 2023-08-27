@@ -2,8 +2,8 @@ import { Divider, Grid, styled } from "@mui/material";
 import { Divide as Hamburger } from "hamburger-react";
 import { useDispatch, useSelector } from "react-redux";
 import { Greeting, NotificationBtn, ProfileBtn } from ".";
-import { RootState } from "../../../store";
-import { toggle } from "../../../store/menuSlice";
+import { RootState } from "../../store";
+import { toggle } from "../../store/menuSlice";
 
 const UserBanner = () => {
   const isMenuOpen = useSelector((state: RootState) => state.menu.isMenuOpen);

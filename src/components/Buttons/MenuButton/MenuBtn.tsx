@@ -66,7 +66,7 @@ const MenuBtn = ({
       fullWidth
       disableElevation
       startIcon={<BtnIcon />}
-      onClick={dropdown ? onClick : undefined}
+      onClick={onClick}
       sx={{
         textTransform: "unset",
         justifyContent: "flex-start",
