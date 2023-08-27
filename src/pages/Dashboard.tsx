@@ -35,6 +35,7 @@ const Dashboard = () => {
           alignItems: "center",
           justifyContent: "flex-start",
           backgroundColor: "white.main",
+          overflowY: "scroll",
         }}
       >
         <DashboardComponent />

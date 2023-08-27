@@ -74,11 +74,14 @@ const UserBanner = () => {
           container
           columnGap={{ xs: 0.25, sm: 1.25, md: 2.5 }}
           width="auto"
+          flexWrap={"nowrap"}
         >
           <Grid
             item
-            columnGap={1}
-            sx={{ display: "flex", alignItems: "center" }}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+            }}
           >
             <Greeting />
           </Grid>

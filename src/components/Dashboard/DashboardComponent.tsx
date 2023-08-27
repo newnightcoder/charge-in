@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import useWindowSize from "../../hooks/useWindowSize";
 import Menu from "../Menu/Menu";
 import { DashboardHeader } from "./DashboardHeader";
+import { StatisticBoard } from "./StatisticBoard";
 import { UserBanner } from "./UserBanner";
 
 const Dashboard = () => {
@@ -22,6 +23,7 @@ const Dashboard = () => {
       {width < 900 && <Menu />}
       <UserBanner />
       <DashboardHeader />
+      <StatisticBoard />
     </Grid>
   );
 };

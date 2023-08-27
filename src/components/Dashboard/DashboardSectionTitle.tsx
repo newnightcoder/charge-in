@@ -1,26 +1,38 @@
 import { Grid, Typography } from "@mui/material";
 
-const ObjectifsTitle = () => {
+interface DashboardSectionTitleProps {
+  str1: string;
+  str2: string;
+  color1: string;
+  color2: string;
+}
+
+const DashboardSectionTitle = ({
+  str1,
+  str2,
+  color1,
+  color2,
+}: DashboardSectionTitleProps) => {
   return (
     <Grid item container columnGap={0.75} width="auto" sx={{ wrap: "nowrap" }}>
       <Typography
         variant="h2"
         fontSize={"1.25rem"}
         fontWeight={700}
-        sx={{ color: "#FFF" }}
+        sx={{ color: color1 }}
       >
-        Objectifs de
+        {str1}
       </Typography>
       <Typography
         variant="h2"
         fontSize={"1.25rem"}
         fontWeight={700}
-        sx={{ color: "turquoise.main" }}
+        sx={{ color: color2 }}
       >
-        Charge-in
+        {str2}
       </Typography>
     </Grid>
   );
 };
 
-export default ObjectifsTitle;
+export default DashboardSectionTitle;

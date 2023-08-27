@@ -1,5 +1,7 @@
 import { Grid } from "@mui/material";
-import { Objectif, ObjectifsBtn, ObjectifsTitle } from ".";
+import { Objectif, ObjectifsBtn } from ".";
+import { theme } from "../../../../theme/theme";
+import DashboardSectionTitle from "../../DashboardSectionTitle";
 
 const Objectifs = () => {
   const objectifs = [
@@ -7,6 +9,11 @@ const Objectifs = () => {
     { name: "100 installateurs", percent: 45 },
     { name: "200 installations", percent: 100 },
   ];
+
+  const sectionTitle = {
+    str1: "Objectifs de",
+    str2: "Charge-in",
+  };
 
   return (
     <Grid
@@ -29,7 +36,12 @@ const Objectifs = () => {
         rowGap={1.5}
         sx={{ alignItems: "center" }}
       >
-        <ObjectifsTitle />
+        <DashboardSectionTitle
+          str1={sectionTitle.str1}
+          str2={sectionTitle.str2}
+          color1={"#FFF"}
+          color2={theme.palette.turquoise.main}
+        />
         <ObjectifsBtn />
       </Grid>
 
