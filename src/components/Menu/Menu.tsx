@@ -9,10 +9,11 @@ const Menu = () => {
   const sections = ["opportunités", "utilisateurs", "données"];
   const isMenuOpen = useSelector((state: RootState) => state.menu.isMenuOpen);
   const menuStyle = {
+    height: "auto",
+    width: { xs: "80%", md: 280 },
     position: { xs: "fixed", md: "relative" },
     inset: { xs: "0", md: "unset" },
     zIndex: { xs: 100, md: 1 },
-    height: "auto",
     justifyContent: "flex-start",
     backgroundColor: "darkBlue.main",
     overflowY: "scroll",

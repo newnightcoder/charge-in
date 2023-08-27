@@ -8,7 +8,12 @@ const StatisticGrid = () => {
   const stats = Object.entries(statistics);
 
   return (
-    <Grid container spacing={2}>
+    <Grid
+      container
+      columnGap={2}
+      rowGap={2}
+      sx={{ justifyContent: { xs: "center", sm: "flex-start" } }}
+    >
       {stats.map((stat, i) => (
         <Grid item key={i}>
           <StatCard stat={stat} />

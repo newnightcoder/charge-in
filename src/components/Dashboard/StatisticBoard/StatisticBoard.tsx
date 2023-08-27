@@ -9,7 +9,7 @@ const StatisticBoard = () => {
     str2: "Charge-in",
   };
   return (
-    <Grid container>
+    <Grid container direction={"column"} rowGap={4}>
       <DashboardSectionTitle
         str1={sectionTitle.str1}
         str2={sectionTitle.str2}

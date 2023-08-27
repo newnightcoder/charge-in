@@ -5,7 +5,7 @@ import { DashboardComponent, Menu } from "../components";
 const PageContainer = styled(Box)(({ theme }) => ({
   height: "100vh",
   display: "grid",
-  gridTemplateColumns: "minmax(200px, 300px) 1fr",
+  gridTemplateColumns: "minmax(200px, 280px) 1fr",
   [theme.breakpoints.down("md")]: {
     gridTemplateColumns: "1fr",
   },

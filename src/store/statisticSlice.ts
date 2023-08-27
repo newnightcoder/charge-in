@@ -2,52 +2,67 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   "Installateurs parenaires inscrits": {
-    amount: 70,
+    amount: {
+      amount: 70,
+      price: false,
+    },
     tendency: "-2%",
-    price: false,
     B2B: undefined,
     B2C: undefined,
   },
   "Abonnements en cours": {
-    amount: 261,
+    amount: {
+      amount: 261,
+      price: true,
+    },
     tendency: "2%",
-    price: true,
     B2B: undefined,
     B2C: undefined,
     "Nombre d'abonnements": 22,
   },
   "Devis réalisés": {
-    amount: 105,
+    amount: {
+      amount: 105,
+
+      price: false,
+    },
     tendency: "-2%",
-    price: false,
     B2B: null,
     B2C: null,
   },
   "Points de charge": {
-    amount: 450,
+    amount: {
+      amount: 450,
+      price: false,
+    },
     tendency: "+18%",
-    price: false,
     B2B: null,
     B2C: null,
   },
   "Points de charge supervisés": {
-    amount: 432,
+    amount: {
+      amount: 432,
+      price: false,
+    },
     tendency: "+18%",
-    price: false,
     B2B: null,
     B2C: null,
   },
   "Taux de conversion": {
-    amount: 78,
+    amount: {
+      amount: 78,
+      price: false,
+    },
     tendency: "-2%",
-    price: false,
     B2B: null,
     B2C: null,
   },
   "Chiffre d'affaire": {
-    amount: 26100,
+    amount: {
+      amount: 26100,
+      price: true,
+    },
     tendency: "+6%",
-    price: true,
     B2B: 12000,
     B2C: 22045,
   },
