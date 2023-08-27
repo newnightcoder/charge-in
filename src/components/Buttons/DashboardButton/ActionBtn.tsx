@@ -12,7 +12,7 @@ interface ActionBtnProps {
 }
 
 const ActionBtn = ({ index, btnName }: ActionBtnProps) => {
-  const ActionBtn = styled(Button)(({ theme }) => ({
+  const ActionBtn = styled(Button)(() => ({
     whiteSpace: "nowrap",
     textTransform: "unset",
     borderRadius: "8px",
@@ -42,6 +42,7 @@ const ActionBtn = ({ index, btnName }: ActionBtnProps) => {
       variant="contained"
       color={index % 2 === 0 ? "secondary" : "primary"}
       startIcon={<BtnIcon />}
+      fullWidth
     >
       {btnName}
     </ActionBtn>

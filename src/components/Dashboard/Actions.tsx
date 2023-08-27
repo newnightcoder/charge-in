@@ -1,10 +1,15 @@
-import { Box, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { ActionBtn, actions } from "../Buttons";
 import DashboardSectionTitle from "./DashboardSectionTitle";
 
 const Actions = () => {
+  const btnWrapperStyle = {
+    width: { xs: "75%", md: "300px" },
+    maxWidth: "400px",
+  };
+
   return (
-    <Grid container>
+    <Grid container direction={"column"} rowGap={3}>
       <DashboardSectionTitle
         str1="Actions"
         str2="rapides"
@@ -12,11 +17,19 @@ const Actions = () => {
         color2="#369C96"
       />
 
-      <Box sx={{ width: "100%", display: "flex" }}>
+      <Grid
+        container
+        item
+        columnGap={1.25}
+        rowGap={1}
+        sx={{ justifyContent: { xs: "center", md: "" } }}
+      >
         {Object.values(actions).map((act, i) => (
-          <ActionBtn key={i} btnName={act} index={i} />
+          <Grid item key={i} sx={btnWrapperStyle}>
+            <ActionBtn btnName={act} index={i} />
+          </Grid>
         ))}
-      </Box>
+      </Grid>
     </Grid>
   );
 };

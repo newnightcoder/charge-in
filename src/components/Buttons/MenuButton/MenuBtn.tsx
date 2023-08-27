@@ -11,7 +11,7 @@ import ViewKanbanIcon from "@mui/icons-material/ViewKanban";
 import { Button } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { HTMLAttributes } from "react";
-import { menu } from "..";
+import menu from "./menuBtnList";
 
 interface MenuBtnProps {
   btnName: string;

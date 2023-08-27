@@ -1,9 +1,9 @@
 import { Grid } from "@mui/material";
 import { useSelector } from "react-redux";
-import { MenuBtn, MenuDropdownSection, MenuSection } from ".";
+import { MenuDropdownSection, MenuSection } from ".";
 import { LogoText } from "../../components";
 import { RootState } from "../../store";
-import { menu } from "../Buttons";
+import { menu, MenuBtn } from "../Buttons";
 
 const Menu = () => {
   const sections = ["opportunités", "utilisateurs", "données"];
