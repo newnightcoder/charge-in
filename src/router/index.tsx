@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { DashboardHome } from "../components";
+import { DashboardHome, Encours } from "../components";
 import { menu } from "../components/Buttons";
 import { formatRouteName } from "../helpers";
 import { Dashboard, Home, Login, MenuPage, Profil } from "../pages";
@@ -38,6 +38,16 @@ export const router = createBrowserRouter([
       ...menuRoutes.map((route) => ({
         path: route.path,
         element: route.element,
+        children: [
+          {
+            path: `${route.path}/en-cours`,
+            element: <Encours />,
+          },
+          {
+            path: `${route.path}/archives`,
+            element: <>archive</>,
+          },
+        ],
       })),
     ],
   },

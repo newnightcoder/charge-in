@@ -28,7 +28,6 @@ const MenuDropdown = ({ btnName }: MenuDropdownProps) => {
         onClick={handleClickDropdown}
         open={open}
       />
-
       <AnimateHeight
         height={animateHeight}
         duration={500}

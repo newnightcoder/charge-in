@@ -52,7 +52,7 @@ const PageTitle = ({ title }: { title: string }) => {
   };
 
   return (
-    <Grid container item columnGap={1}>
+    <Grid container item columnGap={1} sx={{ width: "auto" }}>
       <Grid item>
         <TitleIcon />
       </Grid>
