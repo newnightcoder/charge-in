@@ -1,22 +1,36 @@
+import { SearchOutlined } from "@mui/icons-material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {
   Box,
+  Grid,
+  IconButton,
+  InputBase,
   Paper,
   Table,
   TableBody,
   TableCell,
   TableContainer,
+  TableHead,
   TablePagination,
   TableRow,
+  Toolbar,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { grey } from "@mui/material/colors";
+import { useEffect, useMemo, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 const Tableau = () => {
-  const [rows, setRows] = useState([]);
+  const [rows, setRows] = useState<any>([]);
+
+  const { clients } = useSelector((state: RootState) => state.clients);
 
   const getData = async () => {
     const res = await fetch("https://dummyjson.com/users");
     const { users } = await res.json();
-    setRows(users);
+    setRows(users.slice(0, 27));
   };
 
   useEffect(() => {
@@ -26,10 +40,14 @@ const Tableau = () => {
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [page, setPage] = useState(0);
 
-  const visibleRows = Array(rowsPerPage);
+  const visibleRows = useMemo(
+    () => clients.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage),
+    [clients, page, rowsPerPage]
+  );
+
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - clients.length) : 0;
 
   const handleChangePage = (e: unknown, newPage: number) => {
     setPage(newPage);
@@ -40,52 +58,120 @@ const Tableau = () => {
     setPage(0);
   };
 
+  const TableToolbar = () => {
+    return (
+      <Toolbar sx={{ pb: 2 }}>
+        <Grid item container columnGap={3} sx={{ alignItems: "center" }}>
+          <Grid item sx={{ fontWeight: 700 }}>
+            {clients.length} résultats
+          </Grid>
+          <Grid item>
+            <Paper
+              component="form"
+              elevation={0}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                p: "8px",
+                border: `1px solid ${grey[400]}`,
+              }}
+            >
+              <SearchOutlined
+                sx={{ color: grey[400], transform: "translateY(-1px)" }}
+              />
+              <InputBase size="small" placeholder={"Rechercher par"} />
+            </Paper>
+          </Grid>
+          <Grid item>
+            <Paper
+              component="form"
+              elevation={0}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                p: "8px",
+                border: `1px solid ${grey[400]}`,
+              }}
+            >
+              <InputBase size="small" placeholder={"Trier par: Tout"} />
+            </Paper>
+          </Grid>
+        </Grid>
+      </Toolbar>
+    );
+  };
+
+  const TableHeader = () => {
+    const columns = ["Nom", "Borne choisie", "Devis", "Étape", "Action"];
+
+    return (
+      <TableHead>
+        <TableRow>
+          {columns.map((col, i) => (
+            <TableCell
+              key={i}
+              align="center"
+              padding={col === "Nom" ? "none" : "normal"}
+              sx={{
+                color: grey[500],
+                borderTop: `1px solid ${grey[300]}`,
+                width: col === "Action" ? 150 : "auto",
+              }}
+            >
+              {col}
+            </TableCell>
+          ))}
+        </TableRow>
+      </TableHead>
+    );
+  };
+
   return (
     <Box sx={{ width: "100%" }}>
-      <Paper sx={{ width: "100%", mb: 2 }}>
-        {/* <EnhancedTableToolbar numSelected={selected.length} /> */}
+      <Paper sx={{ width: "100%", mb: 2, pt: 2 }}>
+        <TableToolbar />
         <TableContainer>
-          <Table
-            sx={{ minWidth: 750 }}
-            aria-labelledby="tableTitle"
-            size={"medium"}
-          >
-            {/* <EnhancedTableHead
-              numSelected={selected.length}
-              order={order}
-              orderBy={orderBy}
-              onSelectAllClick={handleSelectAllClick}
-              onRequestSort={handleRequestSort}
-              rowCount={rows.length}
-            /> */}
+          <Table sx={{ minWidth: 750 }} size={"medium"}>
+            <TableHeader />
             <TableBody>
-              {visibleRows.map((row, i) => {
-                // const isItemSelected = isSelected(row.name);
-                // const labelId = `enhanced-table-checkbox-${index}`;
-
+              {visibleRows.map((row: any, i: number) => {
                 return (
                   <TableRow
                     hover
                     // onClick={(e) => handleClick(e, row.name)}
-                    role="checkbox"
-                    // aria-checked={isItemSelected}
-                    // selected={isItemSelected}
-                    tabIndex={-1}
-                    key={row.name}
+                    key={i}
                     sx={{ cursor: "pointer" }}
                   >
-                    {/* <TableCell
+                    <TableCell
                       component="th"
-                      id={i}
+                      id={row.nom}
                       scope="row"
                       padding="none"
+                      align="center"
+                      sx={{ fontWeight: 500 }}
                     >
-                      {row.name}
-                    </TableCell> */}
-                    <TableCell align="right">{row.calories}</TableCell>
-                    <TableCell align="right">{row.fat}</TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
-                    <TableCell align="right">{row.protein}</TableCell>
+                      {row.nom}
+                    </TableCell>
+                    <TableCell align="center" sx={{ fontWeight: 500 }}>
+                      Borne Modèle {row.borne}
+                    </TableCell>
+                    <TableCell align="center" sx={{ fontWeight: 500 }}>
+                      {row.devis ?? "###"}
+                    </TableCell>
+                    <TableCell align="center" sx={{ fontWeight: 500 }}>
+                      Étape {row.etape}
+                    </TableCell>
+                    <TableCell align="center" padding="none">
+                      <IconButton>
+                        <EditIcon sx={{ color: "secondary.main" }} />
+                      </IconButton>
+                      <IconButton>
+                        <DeleteIcon sx={{ color: "secondary.main" }} />
+                      </IconButton>
+                      <IconButton>
+                        <MoreVertIcon sx={{ color: "secondary.main" }} />
+                      </IconButton>
+                    </TableCell>
                   </TableRow>
                 );
               })}
@@ -109,7 +195,13 @@ const Tableau = () => {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
-          labelRowsPerPage={"Lignes par page"}
+          labelRowsPerPage={"Lignes par page:"}
+          sx={{
+            ".MuiTablePagination-displayedRows, .MuiTablePagination-selectLabel":
+              {
+                fontWeight: 700,
+              },
+          }}
         />
       </Paper>
     </Box>
