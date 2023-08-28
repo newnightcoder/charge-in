@@ -2,9 +2,10 @@ import AddIcon from "@mui/icons-material/Add";
 import { Button } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { PropsWithChildren } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { BtnIcon, menu } from "..";
 import { formatRouteName } from "../../../helpers";
+import { useHandleOption } from "../../../hooks";
 
 interface MenuBtnProps extends PropsWithChildren {
   btnName: string;
@@ -12,43 +13,24 @@ interface MenuBtnProps extends PropsWithChildren {
   dropdownOption?: boolean;
   open?: boolean;
   onClick?: () => void;
-  handleOption?: (opt: string) => void;
+  parent?: string;
 }
 
 const MenuBtn = ({
   btnName,
   dropdown,
   onClick,
-  // handleOption,
   dropdownOption,
+  parent,
 }: MenuBtnProps) => {
   const { pathname } = useLocation();
-  const navigate = useNavigate();
+  const handleOption = useHandleOption();
 
   const linkTo = dropdownOption
     ? "#"
     : btnName === menu.accueil
     ? "/dashboard"
     : `/dashboard/${formatRouteName(btnName)}`;
-
-  const handleOption = (opt: string) => {
-    const isEnCours = pathname.endsWith("en-cours");
-    const isArchives = pathname.endsWith("archives");
-    const formattedOption = opt
-      .replace(" ", "-")
-      .replace("é", "e")
-      .toLowerCase();
-
-    if (isEnCours && formattedOption === "en-cours") return;
-    if (isArchives && formattedOption === "archives") return;
-
-    const newPath = `${pathname}/${formattedOption}`;
-    const replacedPath = `${pathname.replace(
-      /(en-cours|archives)$/,
-      formattedOption
-    )}`;
-    navigate(isEnCours || isArchives ? replacedPath : newPath);
-  };
 
   const btnStyle = {
     textTransform: "unset",
@@ -61,9 +43,21 @@ const MenuBtn = ({
     },
     "&.active": {
       backgroundColor: "info.dark",
-      // color: dropdownOption ? "turquoise.main" : "",
+      color:
+        dropdownOption &&
+        pathname.includes(parent!.toLowerCase()) &&
+        pathname.includes(
+          btnName.replace(" ", "-").replace(/é/i, "e").toLowerCase()
+        )
+          ? "turquoise.main"
+          : "",
     },
   };
+  const handleClick = dropdownOption
+    ? () => handleOption(btnName, parent!)
+    : dropdown
+    ? onClick
+    : undefined;
 
   return (
     <Button
@@ -75,13 +69,7 @@ const MenuBtn = ({
       component={NavLink}
       to={linkTo}
       end
-      onClick={
-        dropdownOption
-          ? () => handleOption!(btnName)
-          : dropdown
-          ? onClick
-          : undefined
-      }
+      onClick={handleClick}
       sx={btnStyle}
     >
       {btnName}

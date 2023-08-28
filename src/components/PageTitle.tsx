@@ -54,14 +54,19 @@ const PageTitle = ({ title }: { title: string }) => {
   };
 
   return (
-    <Grid container item columnGap={1} sx={{ width: "auto" }}>
+    <Grid
+      container
+      item
+      columnGap={1}
+      sx={{ width: "auto", alignItems: "center" }}
+    >
       <Grid item>
         <TitleIcon />
       </Grid>
       <Grid item>
         <Typography
           variant="h1"
-          sx={{ fontSize: { xs: "1.25rem", md: "2.5rem" } }}
+          sx={{ fontSize: { xs: "1.5rem", md: "2.5rem" } }}
           fontWeight={700}
           noWrap
         >

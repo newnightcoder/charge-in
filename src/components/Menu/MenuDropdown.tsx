@@ -39,7 +39,12 @@ const MenuDropdown = ({ btnName }: MenuDropdownProps) => {
         }}
       >
         {options.map((opt, i) => (
-          <MenuBtn key={i} btnName={opt} dropdownOption={true} />
+          <MenuBtn
+            key={i}
+            btnName={opt}
+            dropdownOption={true}
+            parent={btnName}
+          />
         ))}
       </AnimateHeight>
     </>
