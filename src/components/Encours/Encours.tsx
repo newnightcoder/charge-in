@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import Tableau from "./Tableau";
 
-const Encours = () => {
+const Encours = ({ title }: { title: string }) => {
   return (
     <Grid item container>
       <Grid item container>

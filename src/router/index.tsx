@@ -31,21 +31,26 @@ export const router = createBrowserRouter([
         path: "/dashboard",
         element: <DashboardHome />,
       },
-      {
-        path: "/dashboard/profil",
-        element: <Profil />,
-      },
+
       ...menuRoutes.map((route) => ({
         path: route.path,
         element: route.element,
         children: [
           {
             path: `${route.path}/en-cours`,
-            element: <Encours />,
+            element: (
+              <Encours
+                title={route.path.split("/")[route.path.split("/").length - 1]}
+              />
+            ),
           },
           {
             path: `${route.path}/archives`,
             element: <>archive</>,
+          },
+          {
+            path: `${route.path}/en-cours/:id`,
+            element: <Profil />,
           },
         ],
       })),

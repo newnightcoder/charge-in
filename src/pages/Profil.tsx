@@ -1,7 +1,14 @@
 import { Grid, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { PageTitle } from "../components";
+import { RootState } from "../store";
 
 const Profil = () => {
+  const { id } = useParams();
+  const { clients } = useSelector((state: RootState) => state.clients);
+  const profil = [...clients].find((client) => client.nom === id);
+
   return (
     <Grid container direction={"column"}>
       <Grid item container>
@@ -13,7 +20,7 @@ const Profil = () => {
             fontWeight={700}
             noWrap
           >
-            &nbsp;: Prenom
+            &nbsp;: {profil!.prenom} {profil!.nom}
           </Typography>
         </Grid>
       </Grid>

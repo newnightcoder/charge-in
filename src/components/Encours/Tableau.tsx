@@ -18,27 +18,17 @@ import {
   Toolbar,
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
 import { RootState } from "../../store";
 
 const Tableau = () => {
-  const [rows, setRows] = useState<any>([]);
-
   const { clients } = useSelector((state: RootState) => state.clients);
-
-  const getData = async () => {
-    const res = await fetch("https://dummyjson.com/users");
-    const { users } = await res.json();
-    setRows(users.slice(0, 27));
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [page, setPage] = useState(0);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const visibleRows = useMemo(
     () => clients.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage),
@@ -138,7 +128,7 @@ const Tableau = () => {
                 return (
                   <TableRow
                     hover
-                    // onClick={(e) => handleClick(e, row.name)}
+                    onClick={() => navigate(`${pathname}/${row.nom}`)}
                     key={i}
                     sx={{ cursor: "pointer" }}
                   >
@@ -190,7 +180,7 @@ const Tableau = () => {
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={rows.length}
+          count={clients.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

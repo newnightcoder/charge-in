@@ -9,42 +9,44 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import ViewKanbanIcon from "@mui/icons-material/ViewKanban";
 import { Grid, Typography } from "@mui/material";
+import { capitalizeWord } from "../helpers";
 import { menu } from "./Buttons";
 
 const PageTitle = ({ title }: { title: string }) => {
+  const capitalizedTitle = capitalizeWord(title);
+
   const TitleIcon = () => {
     const iconStyle = {
       color: "primary.main",
       fontSize: "3rem",
     };
-
     return (
       <>
         {title.includes("Tableau") ? (
           <ElectricBoltOutlinedIcon sx={iconStyle} />
         ) : title.includes("Profil") ? (
           <PersonIcon sx={iconStyle} />
-        ) : title === menu.opportunités.maisons ? (
+        ) : capitalizedTitle === menu.opportunités.maisons ? (
           <HouseIcon sx={iconStyle} />
-        ) : title === menu.opportunités.appartements ? (
+        ) : capitalizedTitle === menu.opportunités.appartements ? (
           <HouseIcon sx={iconStyle} />
-        ) : title === menu.opportunités.études ? (
+        ) : capitalizedTitle === menu.opportunités.études ? (
           <BusinessIcon sx={iconStyle} />
-        ) : title === menu.utilisateurs.admin ? (
+        ) : capitalizedTitle === menu.utilisateurs.admin ? (
           <VerifiedUserIcon sx={iconStyle} />
-        ) : title === menu.utilisateurs.managers ? (
+        ) : capitalizedTitle === menu.utilisateurs.managers ? (
           <PersonOutlineIcon sx={iconStyle} />
-        ) : title === menu.utilisateurs.installateurs ? (
+        ) : capitalizedTitle === menu.utilisateurs.installateurs ? (
           <PersonOutlineIcon sx={iconStyle} />
-        ) : title === menu.utilisateurs.clients ? (
+        ) : capitalizedTitle === menu.utilisateurs.clients ? (
           <PersonOutlineIcon sx={iconStyle} />
-        ) : title === menu.données.bornes ? (
+        ) : capitalizedTitle === menu.données.bornes ? (
           <ElectricBoltIcon sx={iconStyle} />
-        ) : title === menu.données.vehicules ? (
+        ) : capitalizedTitle === menu.données.vehicules ? (
           <DirectionsCarOutlinedIcon sx={iconStyle} />
-        ) : title === menu.données.accessoires ? (
+        ) : capitalizedTitle === menu.données.accessoires ? (
           <ConstructionOutlinedIcon sx={iconStyle} />
-        ) : title === menu.données.objectifs ? (
+        ) : capitalizedTitle === menu.données.objectifs ? (
           <ViewKanbanIcon sx={iconStyle} />
         ) : null}
       </>
@@ -63,7 +65,7 @@ const PageTitle = ({ title }: { title: string }) => {
           fontWeight={700}
           noWrap
         >
-          {title}
+          {capitalizedTitle}
         </Typography>
       </Grid>
     </Grid>
