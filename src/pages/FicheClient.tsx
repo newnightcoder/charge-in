@@ -4,14 +4,14 @@ import { useParams } from "react-router-dom";
 import { PageTitle } from "../components";
 import { RootState } from "../store";
 
-const Profil = () => {
+const FicheClient = () => {
   const { id } = useParams();
   const { clients } = useSelector((state: RootState) => state.clients);
   const profil = [...clients].find((client) => client.nom === id);
 
   return (
     <Grid container direction={"column"}>
-      <Grid item container>
+      <Grid item container sx={{ alignItems: "center" }}>
         <PageTitle title={"Profil"} />
         <Grid item>
           <Typography
@@ -28,4 +28,4 @@ const Profil = () => {
   );
 };
 
-export default Profil;
+export default FicheClient;
