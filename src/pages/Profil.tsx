@@ -1,10 +1,10 @@
 import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { InfoPerso, PageTitle, Questionnaire } from "../components";
+import { FicheClient, PageTitle } from "../components";
 import { RootState } from "../store";
 
-const FicheClient = () => {
+const Profil = () => {
   const { id } = useParams();
   const { clients } = useSelector((state: RootState) => state.clients);
   const client = [...clients].find((client) => client.nom === id);
@@ -25,23 +25,9 @@ const FicheClient = () => {
         </Grid>
       </Grid>
 
-      <Grid
-        item
-        columnGap={3}
-        rowGap={3}
-        sx={{
-          display: "grid",
-          gridTemplateColumns: {
-            xs: "1fr",
-            md: "calc(40% - 12px) calc(60% - 12px)",
-          },
-        }}
-      >
-        <InfoPerso client={client!} />
-        <Questionnaire questionnaire={client!.questionnaire!} />
-      </Grid>
+      <FicheClient client={client!} />
     </Grid>
   );
 };
 
-export default FicheClient;
+export default Profil;

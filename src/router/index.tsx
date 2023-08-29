@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { DashboardHome, Encours } from "../components";
 import { menu } from "../components/Buttons";
 import { formatRouteName } from "../helpers";
-import { Dashboard, FicheClient, Home, Login, MenuPage } from "../pages";
+import { Dashboard, Home, Login, MenuPage, Profil } from "../pages";
 
 const sections = [menu.opportunités, menu.utilisateurs, menu.données];
 
@@ -50,7 +50,7 @@ export const router = createBrowserRouter([
           },
           {
             path: `${route.path}/en-cours/:id`,
-            element: <FicheClient />,
+            element: <Profil />,
           },
         ],
       })),

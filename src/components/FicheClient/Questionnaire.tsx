@@ -1,5 +1,5 @@
-import { Divider, Grid, Typography } from "@mui/material";
-import InfoDetail from "./InfoDetail";
+import { Divider, Grid } from "@mui/material";
+import { InfoDetail, Section, TitleSection } from ".";
 
 interface QuestionnaireProps {
   questionnaire: {
@@ -19,17 +19,8 @@ interface QuestionnaireProps {
 
 const Questionnaire = ({ questionnaire }: QuestionnaireProps) => {
   return (
-    <Grid
-      container
-      item
-      direction={"column"}
-      rowGap={2}
-      sx={{ bgcolor: "#FFF", p: 4, borderRadius: "8px" }}
-    >
-      <Grid item>
-        <Typography variant="h6">Réponses au questionnaire</Typography>
-      </Grid>
-
+    <Section>
+      <TitleSection title="Réponses au questionnaire" />
       <Grid container item direction="column" rowGap={2}>
         <Grid
           container
@@ -97,7 +88,7 @@ const Questionnaire = ({ questionnaire }: QuestionnaireProps) => {
           <InfoDetail label="Marque borne" content={"Information ici"} />
         </Grid>
       </Grid>
-    </Grid>
+    </Section>
   );
 };
 
