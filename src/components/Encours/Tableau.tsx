@@ -22,6 +22,7 @@ import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { RootState } from "../../store";
+import Etape from "./Etape";
 
 const Tableau = () => {
   const { clients } = useSelector((state: RootState) => state.clients);
@@ -149,7 +150,7 @@ const Tableau = () => {
                       {row.devis ?? "###"}
                     </TableCell>
                     <TableCell align="center" sx={{ fontWeight: 500 }}>
-                      Étape {row.etape}
+                      <Etape etape={row.etape} />
                     </TableCell>
                     <TableCell align="center" padding="none">
                       <IconButton>
