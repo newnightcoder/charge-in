@@ -61,7 +61,7 @@ const MenuBtn = ({
     },
   };
 
-  const handle = () => {
+  const handleClick = () => {
     if (dropdownOption) {
       if (isMenuOpen) {
         handleOption(btnName, parent!);
@@ -74,12 +74,6 @@ const MenuBtn = ({
     return undefined;
   };
 
-  const handleClick = dropdownOption
-    ? () => handleOption(btnName, parent!)
-    : dropdown
-    ? onClick
-    : undefined;
-
   return (
     <Button
       variant={dropdownOption ? "text" : "contained"}
@@ -90,7 +84,7 @@ const MenuBtn = ({
       component={NavLink}
       to={linkTo}
       end
-      onClick={handle}
+      onClick={handleClick}
       sx={btnStyle}
     >
       {btnName}
