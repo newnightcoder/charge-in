@@ -2,7 +2,7 @@ import { Section, TitleSection } from ".";
 
 const Commentaires = () => {
   return (
-    <Section span={"all"}>
+    <Section span={"1/3"}>
       <TitleSection title="Commentaires" />
     </Section>
   );
