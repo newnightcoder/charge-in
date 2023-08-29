@@ -1,11 +1,12 @@
 import { Box, IconButton } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toggle } from "../../store/userSlice";
 
 const ProfileBtn = () => {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
-    <IconButton>
+    <IconButton onClick={() => dispatch(toggle())}>
       <Box
         sx={{
           height: { xs: "35px", md: "50px" },

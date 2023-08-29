@@ -1,7 +1,7 @@
 import { Divider, Grid, styled } from "@mui/material";
 import { Divide as Hamburger } from "hamburger-react";
 import { useDispatch, useSelector } from "react-redux";
-import { Greeting, NotificationBtn, ProfileBtn } from ".";
+import { Greeting, NotificationBtn, ProfileBtn, ProfileModal } from ".";
 import { RootState } from "../../store";
 import { toggle } from "../../store/menuSlice";
 
@@ -35,7 +35,13 @@ const UserBanner = () => {
   }));
 
   return (
-    <Grid container item direction="column" rowGap={{ xs: 0.5, md: 1.5 }}>
+    <Grid
+      container
+      item
+      direction="column"
+      rowGap={{ xs: 0.5, md: 1.5 }}
+      sx={{ position: "relative" }}
+    >
       <Grid
         container
         item
@@ -104,6 +110,8 @@ const UserBanner = () => {
       <Grid item>
         <Divider />
       </Grid>
+
+      <ProfileModal />
     </Grid>
   );
 };
