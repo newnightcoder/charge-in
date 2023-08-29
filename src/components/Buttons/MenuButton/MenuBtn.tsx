@@ -2,10 +2,13 @@ import AddIcon from "@mui/icons-material/Add";
 import { Button } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { PropsWithChildren } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
 import { BtnIcon, menu } from "..";
 import { formatRouteName } from "../../../helpers";
 import { useHandleOption } from "../../../hooks";
+import { RootState } from "../../../store";
+import { toggle } from "../../../store/menuSlice";
 
 interface MenuBtnProps extends PropsWithChildren {
   btnName: string;
@@ -25,6 +28,10 @@ const MenuBtn = ({
 }: MenuBtnProps) => {
   const { pathname } = useLocation();
   const handleOption = useHandleOption();
+  const { isMenuOpen } = useSelector((state: RootState) => state.menu);
+  const dispatch = useDispatch();
+
+  const closeMenu = () => dispatch(toggle());
 
   const linkTo = dropdownOption
     ? "#"
@@ -53,6 +60,20 @@ const MenuBtn = ({
           : "",
     },
   };
+
+  const handle = () => {
+    if (dropdownOption) {
+      if (isMenuOpen) {
+        handleOption(btnName, parent!);
+        closeMenu();
+        return;
+      } else return handleOption(btnName, parent!);
+    }
+    if (dropdown) return onClick!();
+    if (isMenuOpen) return closeMenu();
+    return undefined;
+  };
+
   const handleClick = dropdownOption
     ? () => handleOption(btnName, parent!)
     : dropdown
@@ -69,7 +90,7 @@ const MenuBtn = ({
       component={NavLink}
       to={linkTo}
       end
-      onClick={handleClick}
+      onClick={handle}
       sx={btnStyle}
     >
       {btnName}

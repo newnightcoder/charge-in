@@ -59,7 +59,7 @@ const UserBanner = () => {
         <HamburgerBtn>
           <Hamburger
             size={32}
-            color={"#000"}
+            color={isMenuOpen ? "#fff" : "#000"}
             toggle={toggleMenu}
             toggled={isMenuOpen}
           />
