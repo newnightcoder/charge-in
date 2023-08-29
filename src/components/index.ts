@@ -1,6 +1,8 @@
 export { default as DashboardHome } from "./Dashboard/DashboardHome";
 export { default as DashboardSectionTitle } from "./Dashboard/DashboardSectionTitle";
 export { default as Encours } from "./Encours/Encours";
+export { default as InfoPerso } from "./FicheClient/InfoPerso";
+export { default as Questionnaire } from "./FicheClient/Questionnaire";
 export { default as LoginForm } from "./LoginForm";
 export { default as LogoText } from "./LogoText";
 export { default as Menu } from "./Menu/Menu";

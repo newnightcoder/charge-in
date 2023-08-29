@@ -10,7 +10,6 @@ const DashboardHome = () => {
       direction={"column"}
       rowGap={4}
       sx={{
-        maxWidth: "1200px",
         justifyContent: "flex-start",
         backgroundColor: "white.main",
       }}

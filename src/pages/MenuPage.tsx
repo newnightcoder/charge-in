@@ -21,7 +21,6 @@ const MenuPage = ({ title }: { title: string }) => {
         {!isOnFicheClient && isInDropdownOption && (
           <Grid container item width="auto " columnGap={2}>
             <>
-              {" "}
               <Button
                 variant="contained"
                 sx={{

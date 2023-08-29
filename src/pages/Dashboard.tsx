@@ -17,37 +17,51 @@ const PageContainer = styled(Box)(({ theme }) => ({
 const Dashboard = () => {
   const { width } = useWindowSize();
 
+  const menuContainerStyle = {
+    width: "auto",
+    height: "inherit",
+    display: { xs: "none", md: "flex" },
+    flexDirection: "column",
+    backgroundColor: "darkBlue.main",
+  };
+
+  const dashboardOuterContainerStyle = {
+    height: "inherit",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    backgroundColor: "white.main",
+    overflowY: "scroll",
+  };
+
+  const dashboardInnerContainerStyle = {
+    height: "inherit",
+    width: "100%",
+    maxWidth: "1300px",
+    px: { xs: 2, md: 4 },
+    py: { xs: 1, md: 2 },
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    backgroundColor: "white.main",
+    gap: 3,
+  };
+
   return (
     <PageContainer>
-      <Box
-        sx={{
-          width: "auto",
-          height: "inherit",
-          display: { xs: "none", md: "flex" },
-          flexDirection: "column",
-          backgroundColor: "darkBlue.main",
-        }}
-      >
+      <Box sx={menuContainerStyle}>
         <Menu />
       </Box>
       <Box
         className={"styled-scrollbar-dashboard"}
-        sx={{
-          height: "inherit",
-          px: { xs: 2, md: 4 },
-          py: { xs: 1, md: 2 },
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "flex-start",
-          backgroundColor: "white.main",
-          overflowY: "scroll",
-          gap: 3,
-        }}
+        sx={dashboardOuterContainerStyle}
       >
-        <UserBanner />
-        {width < 900 && <Menu />}
-        <Outlet />
+        <Box sx={dashboardInnerContainerStyle}>
+          <UserBanner />
+          {width < 900 && <Menu />}
+          <Outlet />
+        </Box>
       </Box>
     </PageContainer>
   );
