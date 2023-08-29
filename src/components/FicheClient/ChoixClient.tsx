@@ -8,9 +8,10 @@ import { RootState } from "../../store";
 interface BorneProps {
   isDefault?: boolean;
   hover?: boolean;
+  borne?: boolean;
 }
 
-const Borne = ({ isDefault, hover }: BorneProps) => {
+const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
   const gridRef = useRef<HTMLDivElement>(null);
   const { width } = useWindowSize();
   const [gridWidth, setGridWidth] = useState(0);
@@ -21,12 +22,51 @@ const Borne = ({ isDefault, hover }: BorneProps) => {
   const CustomDivider = styled(Box)(({ theme }) => ({
     height: "100%",
     width: "1px",
-    backgroundColor: grey[400],
+    backgroundColor: grey[300],
     [theme.breakpoints.down("md")]: {
       height: "1px",
       width: "75%",
     },
   }));
+
+  const choix = {
+    name: borne ? "Wallbox" : "BLAX",
+    liste: {
+      name: "Pulsar Plus",
+    },
+  };
+
+  const SpecsList = () => {
+    return (
+      <Grid item container direction="column" width="min-content">
+        <ul
+          style={{
+            width: "min-content",
+            whiteSpace: "nowrap",
+            fontSize: ".85rem",
+            paddingLeft: "20px",
+          }}
+        >
+          {borne ? (
+            <>
+              <li>Puissance max pour votre installation: 22kW</li>
+              <li>Contrôle d'accès: RFID</li>
+              <li>Temps de charge: 6h30</li>
+              <li>Optimisation coût de recharge: Oui</li>
+              <li>Borne connectée</li>
+            </>
+          ) : (
+            <>
+              <li>Chez vous à partir de [Date]</li>
+              <li>Votre installateur est à [x]km de chez vous</li>
+              <li>Garantie 2 ans</li>
+              <li>Installateur certifié</li>
+            </>
+          )}
+        </ul>
+      </Grid>
+    );
+  };
 
   useEffect(() => {
     if (gridRef?.current && width > 900 && !isChangeModalOpen) {
@@ -52,7 +92,7 @@ const Borne = ({ isDefault, hover }: BorneProps) => {
         boxShadow: isDefault ? "0px 0px 21px -3px rgba(54,156,150,1)" : "none",
         borderRadius: "12px",
         backgroundColor: "#FFF",
-        py: 4,
+        py: 2,
         overflowX: "auto",
         "&:hover": hover
           ? {
@@ -64,12 +104,10 @@ const Borne = ({ isDefault, hover }: BorneProps) => {
       }}
     >
       <Grid item sx={{ px: 4, py: 2 }}>
-        Wallbox
+        {choix.name}
       </Grid>
 
-      {/* <Grid item> */}
       <CustomDivider />
-      {/* </Grid> */}
 
       <Grid
         container
@@ -89,23 +127,7 @@ const Borne = ({ isDefault, hover }: BorneProps) => {
             Pulsar Plus
           </Typography>
         </Grid>
-
-        <Grid item container direction="column" width="min-content">
-          <ul
-            style={{
-              width: "min-content",
-              whiteSpace: "nowrap",
-              fontSize: ".85rem",
-              paddingLeft: "20px",
-            }}
-          >
-            <li>Puissance max pour votre installation: 22kW</li>
-            <li>Contrôle d'accès: RFID</li>
-            <li>Temps de charge: 6h30</li>
-            <li>Optimisation coût de recharge: Oui</li>
-            <li>Borne connectée</li>
-          </ul>
-        </Grid>
+        <SpecsList />
       </Grid>
 
       <CustomDivider />
@@ -125,4 +147,4 @@ const Borne = ({ isDefault, hover }: BorneProps) => {
   );
 };
 
-export default Borne;
+export default ChoixClient;

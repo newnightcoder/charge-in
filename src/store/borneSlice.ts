@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isChangeBorneOpen: false,
+  isBorne: false,
 };
 
 const borneSlice = createSlice({
@@ -11,9 +12,12 @@ const borneSlice = createSlice({
     toggle: (state) => {
       state.isChangeBorneOpen = !state.isChangeBorneOpen;
     },
+    setIsBorne: (state, action) => {
+      state.isBorne = action.payload;
+    },
   },
 });
 
-export const { toggle } = borneSlice.actions;
+export const { toggle, setIsBorne } = borneSlice.actions;
 
 export default borneSlice.reducer;

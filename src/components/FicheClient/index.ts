@@ -1,6 +1,5 @@
-export { default as Borne } from "./Borne";
-export { default as BorneChoisie } from "./BorneChoisie";
 export { default as ChangeModal } from "./ChangeModal";
+export { default as ChoixClient } from "./ChoixClient";
 export { default as Comment } from "./Comment";
 export { default as Commentaires } from "./Commentaires";
 export { default as Email } from "./Email";
@@ -9,4 +8,5 @@ export { default as InfoPerso } from "./InfoPerso";
 export { default as Phone } from "./Phone";
 export { default as Questionnaire } from "./Questionnaire";
 export { default as Section } from "./Section";
+export { default as SectionChoixClient } from "./SectionChoixClient";
 export { default as TitleSection } from "./TitleSection";

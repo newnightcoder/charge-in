@@ -2,7 +2,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import LoopIcon from "@mui/icons-material/Loop";
 import { Grid, IconButton, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { Borne } from ".";
+import { ChoixClient } from ".";
 import { RootState } from "../../store";
 import { toggle } from "../../store/borneSlice";
 import { BaseBtn } from "../Buttons";
@@ -11,7 +11,21 @@ const ChangeModal = () => {
   const isChangeModalOpen = useSelector(
     (state: RootState) => state.borne.isChangeBorneOpen
   );
+  const isBorne = useSelector((state: RootState) => state.borne.isBorne);
   const dispatch = useDispatch();
+  const toggleModal = () => dispatch(toggle());
+
+  const modal = {
+    title: isBorne ? "Changer la borne" : "Changer l'installateur",
+    msg: isBorne
+      ? "En changeant la borne, vous devrez changer d'installateur"
+      : "",
+    actuel: isBorne ? "Borne actuelle" : "Installateur actuel",
+    autres: isBorne
+      ? "Autres bornes proposées"
+      : "Autres installateurs proposés",
+    btn: isBorne ? "Enregistrer la borne" : "Enregistrer l'installateur",
+  };
 
   return (
     <Grid
@@ -36,7 +50,7 @@ const ChangeModal = () => {
         sx={{
           position: "relative",
           backgroundColor: "white.main",
-          height: "100%",
+          height: "85%",
           width: { xs: "90%", md: "75%" },
           pt: 6,
           px: 4,
@@ -47,7 +61,7 @@ const ChangeModal = () => {
       >
         <IconButton
           sx={{ position: "absolute", top: "5px", right: "5px" }}
-          onClick={() => dispatch(toggle())}
+          onClick={toggleModal}
         >
           <CloseIcon />
         </IconButton>
@@ -67,13 +81,11 @@ const ChangeModal = () => {
           >
             <LoopIcon color="primary" />
             <Typography variant="h6" fontWeight={600}>
-              Changer la borne
+              {modal.title}
             </Typography>
           </Grid>
           <Grid item sx={{ width: "auto" }}>
-            <Typography>
-              En changeant la borne, vous devrez changer d'installateur
-            </Typography>
+            <Typography>{modal.msg}</Typography>
           </Grid>
           <Grid
             item
@@ -83,9 +95,9 @@ const ChangeModal = () => {
             sx={{ width: "auto" }}
           >
             <Typography color="primary" fontWeight={600}>
-              Borne actuelle
+              {modal.actuel}
             </Typography>
-            <Borne isDefault />
+            <ChoixClient isDefault borne={isBorne} />
           </Grid>
           <Grid
             item
@@ -94,13 +106,13 @@ const ChangeModal = () => {
             rowGap={2}
             sx={{ width: "auto" }}
           >
-            <Typography fontWeight={600}>Autres bornes proposées</Typography>
-            <Borne hover />
-            <Borne hover />
-            <Borne hover />
+            <Typography fontWeight={600}>{modal.autres}</Typography>
+            <ChoixClient hover borne={isBorne} />
+            <ChoixClient hover borne={isBorne} />
+            <ChoixClient hover borne={isBorne} />
           </Grid>
           <Grid item>
-            <BaseBtn btnName="Enregistrer la borne" />
+            <BaseBtn btnName={modal.btn} onClick={toggleModal} />
           </Grid>
         </Grid>
       </Grid>
