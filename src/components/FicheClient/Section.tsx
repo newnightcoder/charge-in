@@ -16,7 +16,7 @@ const Section = ({ children, span }: SectionProps) => {
   };
 
   return (
-    <Grid container item sx={{ gridColumn: span ?? "" }}>
+    <Grid container item sx={{ gridColumn: { xs: "", md: span ?? "" } }}>
       <Paper elevation={2} sx={sectionStyle}>
         {children}
       </Paper>
