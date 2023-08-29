@@ -5,7 +5,7 @@ const ProfileBtn = () => {
   const navigate = useNavigate();
 
   return (
-    <IconButton onClick={() => navigate("/dashboard/profil")}>
+    <IconButton>
       <Box
         sx={{
           height: { xs: "35px", md: "50px" },
