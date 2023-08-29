@@ -1,5 +1,11 @@
 import { Grid } from "@mui/material";
-import { Commentaires, InfoPerso, Questionnaire } from ".";
+import {
+  BorneChoisie,
+  ChangeModal,
+  Commentaires,
+  InfoPerso,
+  Questionnaire,
+} from ".";
 
 interface ClientProps {
   client: {
@@ -47,6 +53,8 @@ const FicheClient = ({ client }: ClientProps) => {
       <InfoPerso client={client!} />
       <Questionnaire questionnaire={client!.questionnaire!} />
       <Commentaires />
+      <BorneChoisie />
+      <ChangeModal />
     </Grid>
   );
 };

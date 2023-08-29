@@ -1,3 +1,6 @@
+export { default as Borne } from "./Borne";
+export { default as BorneChoisie } from "./BorneChoisie";
+export { default as ChangeModal } from "./ChangeModal";
 export { default as Comment } from "./Comment";
 export { default as Commentaires } from "./Commentaires";
 export { default as Email } from "./Email";

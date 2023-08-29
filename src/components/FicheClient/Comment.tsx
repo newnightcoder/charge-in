@@ -64,7 +64,12 @@ const Comment = () => {
           <Button
             variant="contained"
             size="small"
-            sx={{ textTransform: "unset", fontSize: ".9rem" }}
+            sx={{
+              textTransform: "unset",
+              fontSize: ".9rem",
+              borderRadius: "8px",
+              px: 2,
+            }}
           >
             Historique des commentaires
           </Button>

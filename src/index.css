@@ -50,3 +50,39 @@ body {
   /* Background */
   background: var(--scrollbar-background);
 }
+.styled-scrollbar-borne {
+  --scrollbar-foreground: #369c96;
+  --scrollbar-background: #fff;
+  /* Foreground, Background */
+  scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+}
+.styled-scrollbar-borne::-webkit-scrollbar {
+  width: 12px; /* Mostly for vertical scrollbars */
+  height: 12px; /* Mostly for horizontal scrollbars */
+}
+.styled-scrollbar-borne::-webkit-scrollbar-thumb {
+  /* Foreground */
+  background: var(--scrollbar-foreground);
+}
+.styled-scrollbar-borne::-webkit-scrollbar-track {
+  /* Background */
+  background: var(--scrollbar-background);
+}
+.styled-scrollbar-modal {
+  --scrollbar-foreground: #304399;
+  --scrollbar-background: transparent;
+  /* Foreground, Background */
+  scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+}
+.styled-scrollbar-modal::-webkit-scrollbar {
+  width: 12px; /* Mostly for vertical scrollbars */
+  height: 12px; /* Mostly for horizontal scrollbars */
+}
+.styled-scrollbar-modal::-webkit-scrollbar-thumb {
+  /* Foreground */
+  background: var(--scrollbar-foreground);
+}
+.styled-scrollbar-modal::-webkit-scrollbar-track {
+  /* Background */
+  background: var(--scrollbar-background);
+}

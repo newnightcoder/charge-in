@@ -1,3 +1,4 @@
+export { default as BaseBtn } from "./BaseBtn";
 export { default as ActionBtn } from "./DashboardButton/ActionBtn";
 export { default as actions } from "./DashboardButton/actionBtnList";
 export { default as BtnIcon } from "./MenuButton/BtnIcon";

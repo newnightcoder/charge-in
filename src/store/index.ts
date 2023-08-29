@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import borneReducer from "./borneSlice";
 import clientsReducer from "./clientsSlice";
 import menuReducer from "./menuSlice";
 import statisticReducer from "./statisticSlice";
@@ -10,6 +11,7 @@ export const store = configureStore({
     statistic: statisticReducer,
     user: userReducer,
     clients: clientsReducer,
+    borne: borneReducer,
   },
 });
 
