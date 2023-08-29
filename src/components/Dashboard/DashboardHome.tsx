@@ -12,6 +12,7 @@ const DashboardHome = () => {
       sx={{
         justifyContent: "flex-start",
         backgroundColor: "white.main",
+        pb: 4,
       }}
     >
       <DashboardHeader />
