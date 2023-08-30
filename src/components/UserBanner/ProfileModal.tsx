@@ -3,13 +3,22 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import VpnKeyOutlinedIcon from "@mui/icons-material/VpnKeyOutlined";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { RootState } from "../../store";
+import { toggle } from "../../store/userSlice";
 
 const ProfileModal = () => {
   const { user, isModalOpen: isProfileModalOpen } = useSelector(
     (state: RootState) => state.user
   );
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    navigate("/");
+    dispatch(toggle());
+  };
 
   const modalStyle = {
     height: "max-content",
@@ -110,6 +119,7 @@ const ProfileModal = () => {
         <Button
           variant="contained"
           startIcon={<LogoutOutlinedIcon />}
+          onClick={logout}
           sx={{
             textTransform: "unset",
             borderRadius: "8px",
