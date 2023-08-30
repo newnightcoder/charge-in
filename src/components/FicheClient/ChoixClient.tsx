@@ -38,13 +38,14 @@ const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
 
   const SpecsList = () => {
     return (
-      <Grid item container direction="column" width="min-content">
+      <Grid item container direction="column" width="auto">
         <ul
           style={{
-            width: "min-content",
-            whiteSpace: "nowrap",
             fontSize: ".85rem",
             paddingLeft: "20px",
+            display: "flex",
+            flexDirection: "column",
+            flexWrap: "wrap",
           }}
         >
           {borne ? (
@@ -114,8 +115,11 @@ const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
         item
         direction={"column"}
         rowGap={1}
-        width="min-content"
-        sx={{ px: 4, py: 2 }}
+        width={{ md: "max-content" }}
+        sx={{
+          p: 2,
+          alignItems: { xs: "center", md: "flex-start" },
+        }}
       >
         <Grid item width="min-content">
           <Typography
@@ -134,11 +138,11 @@ const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
 
       <Grid item sx={{ with: "max-content" }}>
         <Typography
-          variant="h3"
+          variant={"h3"}
           fontWeight={600}
           color="secondary"
           noWrap
-          sx={{ px: 4, py: 2 }}
+          sx={{ px: 2, py: 2, fontSize: { xs: "2rem", md: "3rem" } }}
         >
           2200.00 €
         </Typography>

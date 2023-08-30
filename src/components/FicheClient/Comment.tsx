@@ -34,13 +34,7 @@ const Comment = () => {
         rowGap={1.5}
         sx={{ width: "auto" }}
       >
-        <Grid
-          item
-          container
-          columnGap={2}
-          sx={{ width: "min-content" }}
-          wrap="nowrap"
-        >
+        <Grid item container columnGap={2} sx={{ width: "auto" }}>
           <Grid item>
             <Typography fontWeight={600} noWrap>
               Nabil LOFTY
