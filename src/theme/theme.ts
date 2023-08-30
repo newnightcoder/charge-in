@@ -41,4 +41,32 @@ export const theme = createTheme({
   typography: {
     fontFamily: ["Poppins", "sans-serif"].join(","),
   },
+  components: {
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          "&.Mui-selected": {
+            backgroundImage: "linear-gradient(to right,#82c4c1, #369C96)",
+            borderRadius: "8px",
+            color: "#FFF",
+            fontWeight: 500,
+          },
+          "&.MuiMenuItem-root": {
+            borderRadius: "8px",
+            fontWeight: 500,
+          },
+        },
+      },
+    },
+    MuiList: {
+      styleOverrides: {
+        root: {
+          padding: "8px 8px 16px",
+          "&.MuiMenu-List": {
+            borderRadius: "8px",
+          },
+        },
+      },
+    },
+  },
 });
