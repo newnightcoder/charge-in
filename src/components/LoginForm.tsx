@@ -1,17 +1,28 @@
+import LoginIcon from "@mui/icons-material/Login";
+import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import {
   Box,
   Button,
   Checkbox,
   Container,
   FormControl,
+  IconButton,
+  InputAdornment,
   OutlinedInput,
   Typography,
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const [isPassVisible, setIsPassVisible] = useState(false);
+
+  const handlePassVisibility = () => {
+    setIsPassVisible((prev) => !prev);
+  };
+
   const navigate = useNavigate();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -43,14 +54,20 @@ const LoginForm = () => {
       }}
     >
       <Container>
-        <Typography
-          variant="h1"
-          fontSize={{ xs: "2rem", sm: "3rem" }}
-          fontWeight={700}
-          noWrap
-        >
-          Se connecter
-        </Typography>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1.25 }}>
+          <Typography
+            variant="h1"
+            fontSize={{ xs: "2rem", sm: "3rem" }}
+            fontWeight={700}
+            noWrap
+          >
+            Se connecter
+          </Typography>
+          <LoginIcon
+            color="primary"
+            sx={{ fontSize: { xs: "2rem", sm: "3rem" } }}
+          />
+        </Box>
         <Typography color={grey[600]} sx={{ pt: 1 }}>
           Entrez vos identifiants pour accéder à votre espace personnel.
         </Typography>
@@ -82,12 +99,27 @@ const LoginForm = () => {
               Mot de passe
             </label>
             <OutlinedInput
-              type="password"
+              type={isPassVisible ? "text" : "password"}
               id="password"
               name="pass"
               placeholder="*****"
               sx={inputStyle}
               autoComplete="new-password"
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handlePassVisibility}
+                    edge="end"
+                  >
+                    {isPassVisible ? (
+                      <VisibilityOffOutlinedIcon />
+                    ) : (
+                      <VisibilityOutlinedIcon />
+                    )}
+                  </IconButton>
+                </InputAdornment>
+              }
             />
           </FormControl>
           <Box
