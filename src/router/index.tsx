@@ -38,11 +38,7 @@ export const router = createBrowserRouter([
         children: [
           {
             path: `${route.path}/en-cours`,
-            element: (
-              <Encours
-                title={route.path.split("/")[route.path.split("/").length - 1]}
-              />
-            ),
+            element: <Encours />,
           },
           {
             path: `${route.path}/archives`,

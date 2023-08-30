@@ -19,7 +19,7 @@ const MenuPage = ({ title }: { title: string }) => {
       >
         {!isOnFicheClient && <PageTitle title={title} />}
         {!isOnFicheClient && isInDropdownOption && (
-          <Grid container item width="auto " columnGap={2}>
+          <Grid container item width="auto " columnGap={2} rowGap={1.5}>
             <>
               <Button
                 variant="contained"

@@ -52,7 +52,13 @@ const Tableau = () => {
   const TableToolbar = () => {
     return (
       <Toolbar sx={{ pb: 2 }}>
-        <Grid item container columnGap={3} sx={{ alignItems: "center" }}>
+        <Grid
+          item
+          container
+          columnGap={3}
+          rowGap={1.5}
+          sx={{ alignItems: "center" }}
+        >
           <Grid item sx={{ fontWeight: 700 }}>
             {clients.length} résultats
           </Grid>
@@ -118,7 +124,7 @@ const Tableau = () => {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", pb: 4 }}>
       <Paper sx={{ width: "100%", mb: 2, pt: 2 }}>
         <TableToolbar />
         <TableContainer>
