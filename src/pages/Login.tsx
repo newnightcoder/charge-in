@@ -2,6 +2,7 @@ import { Box, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import { LoginForm, LogoText } from "../components";
+import { useWindowSize } from "../hooks";
 
 const Login = () => {
   const PageContainer = styled(Box)(({ theme }) => ({
@@ -15,13 +16,15 @@ const Login = () => {
     backgroundColor: theme.palette.white.main,
   }));
 
+  const { width } = useWindowSize();
+
   return (
     <PageContainer>
       <Box
         sx={{
           width: "100%",
           maxWidth: "1600px",
-          px: 5,
+          px: { xs: 3, sm: 5 },
           pb: 4,
           display: "flex",
           alignItems: "center",
@@ -33,7 +36,7 @@ const Login = () => {
             sx={{ color: "emerald.main", "&:hover": { color: "emerald.dark" } }}
             fontSize={".9rem"}
           >
-            &lt; Retour vers la page d'accueil
+            &lt; Retour {width > 600 && "vers la page d'accueil"}
           </Typography>
         </Link>
         <LogoText color="emerald" height="25px" />
@@ -43,8 +46,8 @@ const Login = () => {
         sx={{
           height: "auto",
           px: 3,
-          py: 8,
-          width: { xs: "80%", md: "500px" },
+          py: { xs: 6, sm: 8 },
+          width: { xs: "95%", md: "500px" },
           maxWidth: { xs: "500px" },
           bgcolor: "white",
         }}

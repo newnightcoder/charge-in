@@ -43,7 +43,12 @@ const LoginForm = () => {
       }}
     >
       <Container>
-        <Typography variant="h1" fontSize={"3rem"} fontWeight={700}>
+        <Typography
+          variant="h1"
+          fontSize={{ xs: "2rem", sm: "3rem" }}
+          fontWeight={700}
+          noWrap
+        >
           Se connecter
         </Typography>
         <Typography color={grey[600]} sx={{ pt: 1 }}>
@@ -88,7 +93,8 @@ const LoginForm = () => {
           <Box
             sx={{
               display: "flex",
-              alignItems: "center",
+              flexDirection: { xs: "column", sm: "row" },
+              alignItems: { xs: "flex-start", sm: "center" },
               justifyContent: "space-between",
               my: 1,
             }}
