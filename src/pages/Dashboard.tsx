@@ -32,6 +32,7 @@ const Dashboard = () => {
     justifyContent: "center",
     backgroundColor: "white.main",
     overflowY: "scroll",
+    overflowX: "hidden",
   };
 
   const dashboardInnerContainerStyle = {

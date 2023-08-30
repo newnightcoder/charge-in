@@ -1,9 +1,5 @@
 import { Box, Grid, styled, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import { useWindowSize } from "../../hooks";
-import { RootState } from "../../store";
 
 interface BorneProps {
   isDefault?: boolean;
@@ -12,15 +8,8 @@ interface BorneProps {
 }
 
 const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
-  const gridRef = useRef<HTMLDivElement>(null);
-  const { width } = useWindowSize();
-  const [gridWidth, setGridWidth] = useState(0);
-  const isChangeModalOpen = useSelector(
-    (state: RootState) => state.borne.isChangeBorneOpen
-  );
-
   const CustomDivider = styled(Box)(({ theme }) => ({
-    height: "100%",
+    height: "70%",
     width: "1px",
     backgroundColor: grey[300],
     [theme.breakpoints.down("md")]: {
@@ -69,24 +58,14 @@ const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
     );
   };
 
-  useEffect(() => {
-    if (gridRef?.current && width > 900 && !isChangeModalOpen) {
-      setGridWidth(gridRef.current.getBoundingClientRect().width);
-    }
-  }, [width, isChangeModalOpen, gridRef]);
-
   return (
     <Grid
-      ref={gridRef}
       container
       item
       className="styled-scrollbar-borne"
       sx={{
         height: "min-content",
-        flexDirection:
-          (isChangeModalOpen && width > 900) || (gridWidth > 500 && width > 900)
-            ? "row"
-            : "column",
+        flexDirection: { xs: "column", md: "row" },
         alignItems: "center",
         justifyContent: "space-evenly",
         border: `1px solid ${isDefault ? "#369C96" : grey[400]}`,
@@ -94,7 +73,6 @@ const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
         borderRadius: "12px",
         backgroundColor: "#FFF",
         py: 2,
-        overflowX: "auto",
         "&:hover": hover
           ? {
               cursor: "pointer",
