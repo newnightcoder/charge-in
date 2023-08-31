@@ -5,9 +5,10 @@ import {
   InfoPerso,
   Questionnaire,
   SectionChoixClient,
+  SectionDocuments,
 } from ".";
 
-interface ClientProps {
+export interface ClientProps {
   client: {
     prenom: string;
     nom: string;
@@ -33,6 +34,10 @@ interface ClientProps {
       priseDeContact: string;
       prix: null;
     };
+    documents: {
+      documents: { title: string; fichier: string }[];
+      autres: { fichier: string }[];
+    };
   };
 }
 
@@ -53,6 +58,7 @@ const FicheClient = ({ client }: ClientProps) => {
       <InfoPerso client={client!} />
       <Questionnaire questionnaire={client!.questionnaire!} />
       <Commentaires />
+      <SectionDocuments documents={client!.documents} />
       <SectionChoixClient borne />
       <SectionChoixClient />
       <ChangeModal />

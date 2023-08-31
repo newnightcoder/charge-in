@@ -2,29 +2,6 @@ import { Chip } from "@mui/material";
 import { useMemo } from "react";
 
 const Etape = ({ etape }: { etape: number }) => {
-  // const color = {
-  //   text:
-  //     etape === 1
-  //       ? "#369C96"
-  //       : etape === 2
-  //       ? "rgb(255,179,25)"
-  //       : etape === 3
-  //       ? "rgb(153,51,255)"
-  //       : etape === 4
-  //       ? "rgb(255,102,179)"
-  //       : "",
-  //   bg:
-  //     etape === 1
-  //       ? "rgba(0,179,149,.15)"
-  //       : etape === 2
-  //       ? "rgb(255,179,25, .15)"
-  //       : etape === 3
-  //       ? "rgba(153,51,255,.15)"
-  //       : etape === 4
-  //       ? "rgba(255,102,179,.15)"
-  //       : "",
-  // };
-
   const color = useMemo(() => {
     let textColor = "";
     let bgColor = "";

@@ -28,6 +28,21 @@ const initialState = {
         priseDeContact: "Oui",
         prix: null,
       },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
+      },
     },
     {
       prenom: "David",
@@ -54,6 +69,21 @@ const initialState = {
         delai: "3 mois",
         priseDeContact: "Oui",
         prix: null,
+      },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
       },
     },
     {
@@ -82,6 +112,21 @@ const initialState = {
         priseDeContact: "Oui",
         prix: null,
       },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
+      },
     },
     {
       prenom: "José",
@@ -108,6 +153,21 @@ const initialState = {
         delai: "3 mois",
         priseDeContact: "Oui",
         prix: null,
+      },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
       },
     },
     {
@@ -136,6 +196,21 @@ const initialState = {
         priseDeContact: "Oui",
         prix: null,
       },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
+      },
     },
     {
       prenom: "Davide",
@@ -162,6 +237,21 @@ const initialState = {
         delai: "3 mois",
         priseDeContact: "Oui",
         prix: null,
+      },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
       },
     },
     {
@@ -190,6 +280,21 @@ const initialState = {
         priseDeContact: "Oui",
         prix: null,
       },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
+      },
     },
     {
       prenom: "Joséphine",
@@ -216,6 +321,21 @@ const initialState = {
         delai: "3 mois",
         priseDeContact: "Oui",
         prix: null,
+      },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
       },
     },
     {
@@ -244,6 +364,21 @@ const initialState = {
         priseDeContact: "Oui",
         prix: null,
       },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
+      },
     },
     {
       prenom: "Dave",
@@ -270,6 +405,21 @@ const initialState = {
         delai: "3 mois",
         priseDeContact: "Oui",
         prix: null,
+      },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
       },
     },
     {
@@ -298,6 +448,21 @@ const initialState = {
         priseDeContact: "Oui",
         prix: null,
       },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
+      },
     },
     {
       prenom: "Osias",
@@ -324,6 +489,21 @@ const initialState = {
         delai: "3 mois",
         priseDeContact: "Oui",
         prix: null,
+      },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
       },
     },
     {
@@ -352,6 +532,21 @@ const initialState = {
         priseDeContact: "Oui",
         prix: null,
       },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
+      },
     },
     {
       prenom: "Phil",
@@ -378,6 +573,21 @@ const initialState = {
         delai: "3 mois",
         priseDeContact: "Oui",
         prix: null,
+      },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
       },
     },
     {
@@ -406,6 +616,21 @@ const initialState = {
         priseDeContact: "Oui",
         prix: null,
       },
+      documents: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
+      },
     },
     {
       prenom: "Kim",
@@ -432,6 +657,21 @@ const initialState = {
         delai: "3 mois",
         priseDeContact: "Oui",
         prix: null,
+      },
+      document: {
+        documents: [
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+          { title: "Titre du Document", fichier: "nomdufichier.png" },
+        ],
+        autres: [
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+          { fichier: "nomdufichier.png" },
+        ],
       },
     },
   ],
