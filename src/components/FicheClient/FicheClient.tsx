@@ -1,11 +1,11 @@
 import { Grid } from "@mui/material";
 import {
   ChangeModal,
-  Commentaires,
-  InfoPerso,
-  Questionnaire,
   SectionChoixClient,
+  SectionCommentaires,
   SectionDocuments,
+  SectionInfoPerso,
+  SectionQuestionnaire,
 } from ".";
 
 export interface ClientProps {
@@ -55,9 +55,9 @@ const FicheClient = ({ client }: ClientProps) => {
         },
       }}
     >
-      <InfoPerso client={client!} />
-      <Questionnaire questionnaire={client!.questionnaire!} />
-      <Commentaires />
+      <SectionInfoPerso client={client!} />
+      <SectionQuestionnaire questionnaire={client!.questionnaire!} />
+      <SectionCommentaires />
       <SectionDocuments documents={client!.documents} />
       <SectionChoixClient borne />
       <SectionChoixClient />
