@@ -29,7 +29,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -71,7 +71,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -113,7 +113,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -155,7 +155,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -197,7 +197,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -239,7 +239,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -281,7 +281,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -323,7 +323,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -365,7 +365,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -407,7 +407,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -449,7 +449,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -491,7 +491,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -533,7 +533,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -575,7 +575,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -617,7 +617,7 @@ const initialState = {
         prix: null,
       },
       documents: {
-        documents: [
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
@@ -658,8 +658,8 @@ const initialState = {
         priseDeContact: "Oui",
         prix: null,
       },
-      document: {
-        documents: [
+      documents: {
+        docs: [
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },
           { title: "Titre du Document", fichier: "nomdufichier.png" },

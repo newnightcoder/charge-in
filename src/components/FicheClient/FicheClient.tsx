@@ -35,7 +35,7 @@ export interface ClientProps {
       prix: null;
     };
     documents: {
-      documents: { title: string; fichier: string }[];
+      docs: { title: string; fichier: string }[];
       autres: { fichier: string }[];
     };
   };

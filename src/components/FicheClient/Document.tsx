@@ -5,16 +5,17 @@ interface DocumentProps {
     title?: string;
     fichier: string;
   };
+  isAutres?: boolean;
 }
 
-const Document = ({ doc }: DocumentProps) => {
+const Document = ({ doc, isAutres }: DocumentProps) => {
   return (
     <Grid
       container
       item
       direction={"column"}
       rowGap={0.75}
-      width={{ xs: "max-content", md: "33%" }}
+      width={{ xs: "max-content", md: isAutres ? "max-content" : "30%" }}
     >
       <Grid item sx={{ pr: 2 }}>
         <Typography variant="subtitle1" fontWeight={500} noWrap>
@@ -27,7 +28,7 @@ const Document = ({ doc }: DocumentProps) => {
           sx={{
             fontWeight: 600,
             color: "#369C96",
-            backgroundColor: "rgba(0, 179, 149, 0.15)",
+            backgroundColor: "rgba(0, 179, 149, 0.1)",
             borderRadius: "4px",
             py: "1px",
           }}

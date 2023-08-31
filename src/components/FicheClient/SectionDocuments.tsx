@@ -5,7 +5,7 @@ import { BaseBtn } from "../Buttons";
 
 interface DocumentsProps {
   documents: {
-    documents: { title: string; fichier: string }[];
+    docs: { title: string; fichier: string }[];
     autres: { fichier: string }[];
   };
 }
@@ -24,7 +24,7 @@ const SectionDocuments = ({ documents }: DocumentsProps) => {
         rowGap={2}
         sx={{ pb: 2, borderBottom: `1px solid ${grey[300]}` }}
       >
-        {documents.documents.map((doc, i: number) => (
+        {documents.docs.map((doc, i: number) => (
           <Document key={i} doc={doc} />
         ))}
       </Grid>
@@ -33,13 +33,13 @@ const SectionDocuments = ({ documents }: DocumentsProps) => {
         item
         columnGap={2}
         rowGap={2}
-        sx={{ pb: 2, borderBottom: `1px solid ${grey[300]}` }}
+        sx={{ pb: 2, alignItems: "center" }}
       >
         <Typography variant="subtitle1" fontWeight={500} noWrap>
           Autres documents
         </Typography>
         {documents.autres.map((doc, i: number) => (
-          <Document key={i} doc={doc} />
+          <Document key={i} doc={doc} isAutres />
         ))}
       </Grid>
 
