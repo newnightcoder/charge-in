@@ -8,7 +8,6 @@ const Profil = () => {
   const { id } = useParams();
   const { clients } = useSelector((state: RootState) => state.clients);
   const client = [...clients].find((client) => client.nom === id);
-  console.log("client", client);
 
   return (
     <Grid container direction={"column"} rowGap={3} sx={{ pb: 4 }}>
