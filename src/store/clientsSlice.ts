@@ -43,6 +43,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "David",
@@ -85,6 +93,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Marie",
@@ -127,6 +143,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "José",
@@ -169,6 +193,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Vincent",
@@ -211,6 +243,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Davide",
@@ -253,6 +293,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Maria",
@@ -295,6 +343,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Joséphine",
@@ -337,6 +393,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Carlos",
@@ -379,6 +443,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Dave",
@@ -421,6 +493,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Jeanne",
@@ -463,6 +543,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Osias",
@@ -505,6 +593,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Greg",
@@ -547,6 +643,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Phil",
@@ -589,6 +693,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Marion",
@@ -631,6 +743,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
     {
       prenom: "Kim",
@@ -673,6 +793,14 @@ const initialState = {
           { fichier: "nomdufichier.png" },
         ],
       },
+      accessoires: [
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+        { name: "Nom de l'accessoire", price: null },
+      ],
     },
   ],
 };
