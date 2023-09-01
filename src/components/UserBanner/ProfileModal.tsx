@@ -1,7 +1,8 @@
+import CloseIcon from "@mui/icons-material/Close";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import VpnKeyOutlinedIcon from "@mui/icons-material/VpnKeyOutlined";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, IconButton, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +17,10 @@ const ProfileModal = () => {
   const avatarLetter = useAvatarLetter();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const closeModal = () => {
+    dispatch(toggleProfileModal());
+  };
 
   const logout = () => {
     navigate("/");
@@ -52,6 +57,12 @@ const ProfileModal = () => {
 
   return (
     <Grid container direction="column" rowGap={2} sx={modalStyle}>
+      <IconButton
+        sx={{ position: "absolute", top: "5px", right: "5px" }}
+        onClick={closeModal}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
       <Grid container item direction="column" rowGap={1} sx={{ px: 3 }}>
         <Grid item>
           <Typography variant="h6" fontWeight={600}>
