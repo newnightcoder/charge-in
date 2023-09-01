@@ -81,7 +81,7 @@ const ChangeModal = () => {
     width: isAccessoire ? "max-content" : { xs: "90%", md: "75%" },
     maxWidth: isAccessoire ? "750px" : "unset",
     pt: 6,
-    px: 4,
+    px: isAccessoire ? 2 : 4,
     pb: 4,
     borderRadius: "12px",
     overflowY: "scroll",
