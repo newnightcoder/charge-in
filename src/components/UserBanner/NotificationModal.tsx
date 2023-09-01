@@ -7,11 +7,11 @@ import { RootState } from "../../store";
 import { toggleNotifModal } from "../../store/userSlice";
 
 const NotificationModal = () => {
-  const { isNotificationModalOpen } = useSelector(
+  const { isNotificationModalOpen, notifications: notifNumber } = useSelector(
     (state: RootState) => state.user
   );
   const dispatch = useDispatch();
-  const notifications = Array.from(Array(28));
+  const notifications = Array.from(Array(notifNumber));
 
   const closeModal = () => {
     dispatch(toggleNotifModal());
@@ -65,7 +65,6 @@ const NotificationModal = () => {
           display: "flex",
           flexDirection: "column",
           overflowY: "scroll",
-          // border: "2px solid blue",
         }}
       >
         <Grid
@@ -75,7 +74,6 @@ const NotificationModal = () => {
             height: "max-content",
             width: "100%",
             px: 1,
-            // border: "2px solid violet",
           }}
         >
           {notifications.map((_, i) => (
@@ -94,8 +92,8 @@ const NotificationModal = () => {
         }}
       >
         <Typography fontSize=".9rem">
-          {notifications.length}&nbsp;
-          {`notification${notifications.length < 2 ? "" : "s"}`}
+          {notifNumber}&nbsp;
+          {`notification${notifNumber < 2 ? "" : "s"}`}
         </Typography>
         <Button
           variant="contained"

@@ -8,6 +8,7 @@ const initialState = {
   },
   isProfileModalOpen: false,
   isNotificationModalOpen: false,
+  notifications: 28,
 };
 
 const userSlice = createSlice({
