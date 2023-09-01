@@ -58,6 +58,7 @@ const PageTitle = ({ title }: { title: string }) => {
       container
       item
       columnGap={1}
+      flexWrap="nowrap"
       sx={{ width: "auto", alignItems: "center" }}
     >
       <Grid item>

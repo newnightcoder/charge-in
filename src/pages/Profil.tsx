@@ -11,12 +11,22 @@ const Profil = () => {
 
   return (
     <Grid container direction={"column"} rowGap={3} sx={{ pb: 4 }}>
-      <Grid item container sx={{ alignItems: "center" }}>
+      <Grid
+        item
+        container
+        sx={{ alignItems: "center", textOverflow: "ellipsis" }}
+        flexWrap="nowrap"
+      >
         <PageTitle title={"Profil"} />
         <Grid item>
           <Typography
             variant="h1"
-            sx={{ fontSize: { xs: "1.25rem", md: "2.5rem" } }}
+            sx={{
+              fontSize: {
+                xs: "1.5rem",
+                md: "2.5rem",
+              },
+            }}
             fontWeight={700}
             noWrap
           >
