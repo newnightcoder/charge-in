@@ -30,21 +30,14 @@ const SectionRemise = () => {
           <Grid container direction={"column"} rowGap={1}>
             <Grid item>
               <label
-                htmlFor="email"
+                htmlFor="remise"
                 style={{ fontWeight: 500, paddingBottom: "6px" }}
               >
                 Indiquer la remise à appliquer
               </label>
             </Grid>
             <Grid item>
-              <OutlinedInput
-                type="email"
-                id="email"
-                name="usrname"
-                placeholder="000"
-                sx={inputStyle}
-                autoComplete="new-password"
-              />
+              <OutlinedInput id="remise" placeholder="000" sx={inputStyle} />
             </Grid>
           </Grid>
           <BaseBtn btnName="Enregistrer" submit />
