@@ -8,6 +8,13 @@ interface BorneProps {
 }
 
 const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
+  const choix = {
+    name: borne ? "Wallbox" : "BLAX",
+    liste: {
+      name: "Pulsar Plus",
+    },
+  };
+
   const CustomDivider = styled(Box)(({ theme }) => ({
     height: "70%",
     width: "1px",
@@ -18,11 +25,23 @@ const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
     },
   }));
 
-  const choix = {
-    name: borne ? "Wallbox" : "BLAX",
-    liste: {
-      name: "Pulsar Plus",
-    },
+  const containerStyle = {
+    height: "min-content",
+    flexDirection: { xs: "column", md: "row" },
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    border: `1px solid ${isDefault ? "#369C96" : grey[400]}`,
+    boxShadow: isDefault ? "0px 0px 21px -3px rgba(54,156,150,1)" : "none",
+    borderRadius: "12px",
+    backgroundColor: "#FFF",
+    py: 2,
+    "&:hover": hover
+      ? {
+          cursor: "pointer",
+          border: "1px solid #369C96",
+          boxShadow: "0px 0px 21px -3px rgba(54,156,150,1)",
+        }
+      : null,
   };
 
   const SpecsList = () => {
@@ -59,29 +78,7 @@ const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
   };
 
   return (
-    <Grid
-      container
-      item
-      className="styled-scrollbar-borne"
-      sx={{
-        height: "min-content",
-        flexDirection: { xs: "column", md: "row" },
-        alignItems: "center",
-        justifyContent: "space-evenly",
-        border: `1px solid ${isDefault ? "#369C96" : grey[400]}`,
-        boxShadow: isDefault ? "0px 0px 21px -3px rgba(54,156,150,1)" : "none",
-        borderRadius: "12px",
-        backgroundColor: "#FFF",
-        py: 2,
-        "&:hover": hover
-          ? {
-              cursor: "pointer",
-              border: "1px solid #369C96",
-              boxShadow: "0px 0px 21px -3px rgba(54,156,150,1)",
-            }
-          : null,
-      }}
-    >
+    <Grid container item className="styled-scrollbar-borne" sx={containerStyle}>
       <Grid item sx={{ px: 4, py: 2 }}>
         {choix.name}
       </Grid>
