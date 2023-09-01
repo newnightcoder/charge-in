@@ -1,4 +1,5 @@
 export { default as ChangeModal } from "./ChangeModal";
+export { default as ChoixAccessoire } from "./ChoixAccessoire";
 export { default as ChoixClient } from "./ChoixClient";
 export { default as Commentaire } from "./Commentaire";
 export { default as Document } from "./Document";

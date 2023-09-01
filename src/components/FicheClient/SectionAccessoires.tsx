@@ -1,5 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
+import { useDispatch } from "react-redux";
 import { Section, TitleSection } from ".";
+import { setIsAccessoire, toggle } from "../../store/borneSlice";
 import { BaseBtn } from "../Buttons";
 
 interface AccessoireProps {
@@ -7,6 +9,13 @@ interface AccessoireProps {
 }
 
 const SectionAccessoires = ({ accessoires }: AccessoireProps) => {
+  const dispatch = useDispatch();
+
+  const handleModal = () => {
+    dispatch(setIsAccessoire(true));
+    dispatch(toggle());
+  };
+
   return (
     <Section span={"1/3"}>
       <TitleSection title="Accessoires" />
@@ -39,7 +48,7 @@ const SectionAccessoires = ({ accessoires }: AccessoireProps) => {
       </Grid>
 
       <Grid item>
-        <BaseBtn btnName={"Modifier les accessoires"} />
+        <BaseBtn btnName={"Modifier les accessoires"} onClick={handleModal} />
       </Grid>
     </Section>
   );
