@@ -12,7 +12,7 @@ import { RootState } from "../../store";
 import { toggle } from "../../store/menuSlice";
 
 const UserBanner = () => {
-  const isMenuOpen = useSelector((state: RootState) => state.menu.isMenuOpen);
+  const { isMenuOpen } = useSelector((state: RootState) => state.menu);
   const dispatch = useDispatch();
   const toggleMenu = () => dispatch(toggle());
 

@@ -17,9 +17,12 @@ const userSlice = createSlice({
     toggleProfileModal: (state) => {
       state.isProfileModalOpen = !state.isProfileModalOpen;
     },
+    toggleNotifModal: (state) => {
+      state.isNotificationModalOpen = !state.isNotificationModalOpen;
+    },
   },
 });
 
-export const { toggleProfileModal } = userSlice.actions;
+export const { toggleProfileModal, toggleNotifModal } = userSlice.actions;
 
 export default userSlice.reducer;
