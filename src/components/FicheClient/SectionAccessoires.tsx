@@ -16,22 +16,26 @@ const SectionAccessoires = ({ accessoires }: AccessoireProps) => {
     dispatch(toggle());
   };
 
+  const section = {
+    title: "Accessoires",
+    btnName: "Modifier les accessoires",
+  };
+
+  const listStyle = {
+    listStyle: "disc",
+    display: "flex",
+    columnGap: "40px",
+    rowGap: "16px",
+    flexWrap: "wrap",
+    paddingLeft: "20px",
+  };
+
   return (
     <Section span={"1/3"}>
-      <TitleSection title="Accessoires" />
+      <TitleSection title={section.title} />
 
       <Grid item>
-        <Box
-          component={"ul"}
-          sx={{
-            listStyle: "disc",
-            display: "flex",
-            columnGap: "40px",
-            rowGap: "16px",
-            flexWrap: "wrap",
-            paddingLeft: "20px",
-          }}
-        >
+        <Box component={"ul"} sx={listStyle}>
           {accessoires.map((access, i) => (
             <li key={i} style={{ display: "list-item" }}>
               <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -48,7 +52,7 @@ const SectionAccessoires = ({ accessoires }: AccessoireProps) => {
       </Grid>
 
       <Grid item>
-        <BaseBtn btnName={"Modifier les accessoires"} onClick={handleModal} />
+        <BaseBtn btnName={section.btnName} onClick={handleModal} />
       </Grid>
     </Section>
   );

@@ -19,17 +19,19 @@ const SectionChoixClient = ({ borne }: SectionChoixClientProps) => {
     }
   };
 
-  const title = borne ? "Borne choisie" : "Installateur choisi";
-  const btnName = borne ? "Modifier la borne" : "Modifier l'installateur";
+  const section = {
+    title: borne ? "Borne choisie" : "Installateur choisi",
+    btnName: borne ? "Modifier la borne" : "Modifier l'installateur",
+  };
 
   return (
     <Section span="1/3">
-      <TitleSection title={title} />
+      <TitleSection title={section.title} />
 
       <ChoixClient borne={borne} />
 
       <Grid item>
-        <BaseBtn btnName={btnName} onClick={toggleModal} />
+        <BaseBtn btnName={section.btnName} onClick={toggleModal} />
       </Grid>
     </Section>
   );
