@@ -6,19 +6,20 @@ const initialState = {
     prénom: "Prénom",
     email: "prenom.nom@gmail.com",
   },
-  isModalOpen: false,
+  isProfileModalOpen: false,
+  isNotificationModalOpen: false,
 };
 
 const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    toggle: (state) => {
-      state.isModalOpen = !state.isModalOpen;
+    toggleProfileModal: (state) => {
+      state.isProfileModalOpen = !state.isProfileModalOpen;
     },
   },
 });
 
-export const { toggle } = userSlice.actions;
+export const { toggleProfileModal } = userSlice.actions;
 
 export default userSlice.reducer;

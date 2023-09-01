@@ -1,12 +1,14 @@
 import { Box, IconButton } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { toggle } from "../../store/userSlice";
+import { useAvatarLetter } from "../../hooks";
+import { toggleProfileModal } from "../../store/userSlice";
 
 const ProfileBtn = () => {
   const dispatch = useDispatch();
+  const avatarLetter = useAvatarLetter();
 
   return (
-    <IconButton onClick={() => dispatch(toggle())}>
+    <IconButton onClick={() => dispatch(toggleProfileModal())}>
       <Box
         sx={{
           height: { xs: "35px", md: "50px" },
@@ -20,7 +22,7 @@ const ProfileBtn = () => {
           fontSize: { xs: "1rem", md: "1.5rem" },
         }}
       >
-        P
+        {avatarLetter}
       </Box>
     </IconButton>
   );

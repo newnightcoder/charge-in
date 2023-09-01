@@ -5,19 +5,21 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useAvatarLetter } from "../../hooks";
 import { RootState } from "../../store";
-import { toggle } from "../../store/userSlice";
+import { toggleProfileModal } from "../../store/userSlice";
 
 const ProfileModal = () => {
-  const { user, isModalOpen: isProfileModalOpen } = useSelector(
+  const { user, isProfileModalOpen } = useSelector(
     (state: RootState) => state.user
   );
+  const avatarLetter = useAvatarLetter();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const logout = () => {
     navigate("/");
-    dispatch(toggle());
+    dispatch(toggleProfileModal());
   };
 
   const modalStyle = {
@@ -58,7 +60,7 @@ const ProfileModal = () => {
         </Grid>
         <Grid item container columnGap={2} sx={{ alignItems: "center" }}>
           <Grid item>
-            <Box sx={avatarStyle}>P</Box>
+            <Box sx={avatarStyle}>{avatarLetter}</Box>
           </Grid>
           <Grid item container direction={"column"} sx={{ width: "auto" }}>
             <Grid item>
