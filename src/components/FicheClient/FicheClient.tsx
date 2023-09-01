@@ -45,19 +45,16 @@ export interface ClientProps {
 }
 
 const FicheClient = ({ client }: ClientProps) => {
+  const gridStyle = {
+    display: "grid",
+    gridTemplateColumns: {
+      xs: "1fr",
+      md: "calc(40% - 12px) calc(60% - 12px)",
+    },
+  };
+
   return (
-    <Grid
-      item
-      columnGap={3}
-      rowGap={3}
-      sx={{
-        display: "grid",
-        gridTemplateColumns: {
-          xs: "1fr",
-          md: "calc(40% - 12px) calc(60% - 12px)",
-        },
-      }}
-    >
+    <Grid item columnGap={3} rowGap={3} sx={gridStyle}>
       <SectionInfoPerso client={client!} />
       <SectionQuestionnaire questionnaire={client!.questionnaire!} />
       <SectionCommentaires />
