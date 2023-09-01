@@ -11,8 +11,6 @@ interface DocumentsProps {
 }
 
 const SectionDocuments = ({ documents }: DocumentsProps) => {
-  console.log(documents);
-
   return (
     <Section span={"1/3"}>
       <TitleSection title="Documents ajoutés" />
