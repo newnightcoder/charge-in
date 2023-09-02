@@ -69,7 +69,7 @@ const ChangeModal = () => {
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "transparent",
-    backdropFilter: "blur(5px)",
+    backdropFilter: "blur(5px) brightness(50%)",
     opacity: isChangeModalOpen ? 1 : 0,
     transition: "opacity 300ms",
   };
@@ -79,9 +79,9 @@ const ChangeModal = () => {
     backgroundColor: "white.main",
     height: isAccessoire ? "max-content" : "85%",
     width: isAccessoire ? "max-content" : { xs: "90%", md: "75%" },
-    maxWidth: isAccessoire ? "750px" : "unset",
+    maxWidth: isAccessoire ? "750px" : "1200px",
     pt: 6,
-    px: isAccessoire ? 2 : 4,
+    px: isAccessoire ? 4 : 6,
     pb: 4,
     borderRadius: "12px",
     overflowY: "scroll",
@@ -91,7 +91,7 @@ const ChangeModal = () => {
     <Grid container sx={containerStyle}>
       <Grid item className="styled-scrollbar-modal" sx={modalContainerStyle}>
         <IconButton
-          sx={{ position: "absolute", top: "5px", right: "5px" }}
+          sx={{ position: "absolute", top: "10px", right: "5px" }}
           onClick={closeModal}
         >
           <CloseIcon />

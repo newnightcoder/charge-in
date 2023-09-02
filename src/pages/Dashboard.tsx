@@ -38,7 +38,7 @@ const Dashboard = () => {
   const dashboardInnerContainerStyle = {
     height: "inherit",
     width: "100%",
-    maxWidth: "1300px",
+    maxWidth: "1200px",
     px: { xs: 2, md: 4 },
     py: { xs: 1, md: 2 },
     display: "flex",
