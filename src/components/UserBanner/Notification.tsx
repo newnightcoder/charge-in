@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import useAvatarLetter from "../../hooks/useAvatarLetter";
 import { RootState } from "../../store";
 
-const Notification = () => {
+const Notification = ({ index }: { index: number }) => {
   const { user } = useSelector((state: RootState) => state.user);
   const avatarLetter = useAvatarLetter();
   const notification = {
@@ -16,10 +16,11 @@ const Notification = () => {
     <Grid
       item
       sx={{
+        opacity: index <= 1 ? 1 : 0.4,
         borderBottom: `1px solid ${grey[300]}`,
         width: "100%",
         py: 1,
-        "&:hover": { cursor: "pointer" },
+        "&:hover": { cursor: index <= 1 ? "pointer" : "default" },
       }}
     >
       <Grid

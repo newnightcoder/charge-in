@@ -78,7 +78,7 @@ const NotificationModal = () => {
           }}
         >
           {notifications.map((_, i) => (
-            <Notification key={i} />
+            <Notification key={i} index={i} />
           ))}
         </Grid>
       </Box>
