@@ -1,5 +1,7 @@
 import { Box, Grid, styled, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
+import installerImg from "../../assets/picto_installer.png";
+import borneImg from "../../assets/wallbox.png";
 
 interface BorneProps {
   isDefault?: boolean;
@@ -8,13 +10,6 @@ interface BorneProps {
 }
 
 const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
-  const choix = {
-    name: borne ? "Wallbox" : "BLAX",
-    liste: {
-      name: "Pulsar Plus",
-    },
-  };
-
   const CustomDivider = styled(Box)(({ theme }) => ({
     height: "70%",
     width: "1px",
@@ -80,7 +75,7 @@ const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
   return (
     <Grid container item className="styled-scrollbar-borne" sx={containerStyle}>
       <Grid item sx={{ px: 4, py: 2 }}>
-        {choix.name}
+        <img src={borne ? borneImg : installerImg} alt="" />
       </Grid>
 
       <CustomDivider />
