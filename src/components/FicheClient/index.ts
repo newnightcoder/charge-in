@@ -14,4 +14,5 @@ export { default as SectionDocuments } from "./SectionDocuments";
 export { default as SectionInfoPerso } from "./SectionInfoPerso";
 export { default as SectionQuestionnaire } from "./SectionQuestionnaire";
 export { default as SectionRemise } from "./SectionRemise";
+export { default as SplitBtnGroup } from "./SplitBtnGroup";
 export { default as TitleSection } from "./TitleSection";

@@ -8,6 +8,7 @@ import {
   SectionInfoPerso,
   SectionQuestionnaire,
   SectionRemise,
+  SplitBtnGroup,
 } from ".";
 
 export interface ClientProps {
@@ -55,6 +56,7 @@ const FicheClient = ({ client }: ClientProps) => {
 
   return (
     <Grid item columnGap={3} rowGap={3} sx={gridStyle}>
+      <SplitBtnGroup />
       <SectionInfoPerso client={client!} />
       <SectionQuestionnaire questionnaire={client!.questionnaire!} />
       <SectionCommentaires />
