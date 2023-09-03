@@ -1,3 +1,4 @@
+export { default as Archives } from "./Archives/Archives";
 export { default as DashboardHome } from "./Dashboard/DashboardHome";
 export { default as DashboardSectionTitle } from "./Dashboard/DashboardSectionTitle";
 export { default as Encours } from "./Encours/Encours";

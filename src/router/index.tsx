@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { DashboardHome, Encours } from "../components";
+import { Archives, DashboardHome, Encours } from "../components";
 import { menu } from "../components/Buttons";
 import { formatRouteName } from "../helpers";
 import { Dashboard, Home, Login, MenuPage, Profil } from "../pages";
@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
           },
           {
             path: `${route.path}/archives`,
-            element: <>archive</>,
+            element: <Archives />,
           },
           {
             path: `${route.path}/en-cours/:id`,
