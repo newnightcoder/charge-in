@@ -31,12 +31,12 @@ const PrevNextBtn = ({ next, onClick, client }: PrevNextBtnProps) => {
         width="auto"
         sx={{ alignItems: next ? "flex-start" : "flex-end" }}
       >
-        <Grid item width="max-content">
+        <Grid item width="max-content" sx={{}}>
           <Typography color={grey[400]}>
             {next ? "Suivant" : "Précédent"}
           </Typography>
         </Grid>
-        <Grid item>
+        <Grid item sx={{ textAlign: next ? "left" : "right" }}>
           <Typography
             fontWeight={400}
             width={{ xs: "10ch", md: "16ch" }}
