@@ -8,6 +8,15 @@ const DropdownSelect = () => {
     setVal(e.target.value);
   };
 
+  const menuItemStyle = {
+    "&.MuiMenuItem-root.Mui-selected": {
+      backgroundImage: "linear-gradient(to right,#82c4c1, #369C96)",
+      color: "#fff",
+      borderRadius: "8px",
+      fontWeight: 500,
+    },
+  };
+
   return (
     <Select
       value={val}
@@ -34,11 +43,21 @@ const DropdownSelect = () => {
         },
       }}
     >
-      <MenuItem value="Cette année">Cette année</MenuItem>
-      <MenuItem value={"30 derniers jours"}>30 derniers jours</MenuItem>
-      <MenuItem value={"Mois de juin"}>Mois de juin</MenuItem>
-      <MenuItem value={"6 derniers mois"}>6 derniers mois</MenuItem>
-      <MenuItem value={"12 derniers mois"}>12 derniers mois</MenuItem>
+      <MenuItem sx={menuItemStyle} value="Cette année">
+        Cette année
+      </MenuItem>
+      <MenuItem sx={menuItemStyle} value={"30 derniers jours"}>
+        30 derniers jours
+      </MenuItem>
+      <MenuItem sx={menuItemStyle} value={"Mois de juin"}>
+        Mois de juin
+      </MenuItem>
+      <MenuItem sx={menuItemStyle} value={"6 derniers mois"}>
+        6 derniers mois
+      </MenuItem>
+      <MenuItem sx={menuItemStyle} value={"12 derniers mois"}>
+        12 derniers mois
+      </MenuItem>
     </Select>
   );
 };

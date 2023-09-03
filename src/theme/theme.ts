@@ -42,22 +42,6 @@ export const theme = createTheme({
     fontFamily: ["Poppins", "sans-serif"].join(","),
   },
   components: {
-    MuiMenuItem: {
-      styleOverrides: {
-        root: {
-          "&.Mui-selected": {
-            backgroundImage: "linear-gradient(to right,#82c4c1, #369C96)",
-            borderRadius: "8px",
-            color: "#FFF",
-            fontWeight: 500,
-          },
-          "&.MuiMenuItem-root": {
-            borderRadius: "8px",
-            fontWeight: 500,
-          },
-        },
-      },
-    },
     MuiList: {
       styleOverrides: {
         root: {
