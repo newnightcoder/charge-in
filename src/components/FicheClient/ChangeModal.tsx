@@ -1,7 +1,7 @@
 import CloseIcon from "@mui/icons-material/Close";
 import LoopIcon from "@mui/icons-material/Loop";
 import { Grid, IconButton, Typography } from "@mui/material";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ChoixAccessoire, ChoixClient } from ".";
 import { RootState } from "../../store";
@@ -18,6 +18,7 @@ const ChangeModal = () => {
   const dispatch = useDispatch();
 
   const accessoireRefs = useRef<HTMLDivElement[]>([]);
+  const modalRef = useRef<HTMLDivElement>(null);
   const accessoiresQty = 10;
   const [selectedAccessoires, setSelectedAccessoires] = useState<boolean[]>(
     Array(accessoiresQty).fill(false)
@@ -77,9 +78,11 @@ const ChangeModal = () => {
   const modalContainerStyle = {
     position: "relative",
     backgroundColor: "white.main",
-    height: "85%",
-    width: isAccessoire ? "max-content" : { xs: "90%", md: "75%" },
-    maxWidth: isAccessoire ? "750px" : "1200px",
+    height: isAccessoire ? "75%" : "85%",
+    width: isAccessoire
+      ? { xs: "90%", md: "max-content" }
+      : { xs: "90%", md: "75%" },
+    maxWidth: isAccessoire ? "690px" : "1200px",
     pt: 6,
     px: isAccessoire ? 4 : 6,
     pb: 4,
@@ -87,9 +90,20 @@ const ChangeModal = () => {
     overflowY: "scroll",
   };
 
+  useEffect(() => {
+    if (modalRef.current) {
+      modalRef.current.scrollTo(0, 0);
+    }
+  }, [isChangeModalOpen]);
+
   return (
     <Grid container sx={containerStyle}>
-      <Grid item className="styled-scrollbar-modal" sx={modalContainerStyle}>
+      <Grid
+        ref={modalRef}
+        item
+        className="styled-scrollbar-modal"
+        sx={modalContainerStyle}
+      >
         <IconButton
           sx={{ position: "absolute", top: "10px", right: "5px" }}
           onClick={closeModal}
