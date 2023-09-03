@@ -37,7 +37,11 @@ const PrevNextBtn = ({ next, onClick, client }: PrevNextBtnProps) => {
           </Typography>
         </Grid>
         <Grid item>
-          <Typography fontWeight={400} width="10ch" noWrap>
+          <Typography
+            fontWeight={400}
+            width={{ xs: "10ch", md: "16ch" }}
+            noWrap
+          >
             {client?.nom}&nbsp;{client?.prenom}
           </Typography>
         </Grid>

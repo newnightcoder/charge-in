@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { FicheClient, PageTitle } from "../components";
-import { PrevNextBtn } from "../components/FicheClient";
+import { PrevNextSection } from "../components/FicheClient";
 import { RootState } from "../store";
 
 const Profil = () => {
@@ -39,26 +39,12 @@ const Profil = () => {
 
   return (
     <Grid container direction={"column"} rowGap={3} sx={{ pb: 4 }}>
-      <Grid
-        container
-        justifyContent={!prevClient ? "flex-end" : "space-between"}
-        sx={{ pt: 1 }}
-      >
-        {prevClient && (
-          <PrevNextBtn
-            next={false}
-            onClick={handlePrevClient}
-            client={{ nom: prevClient.nom, prenom: prevClient.prenom }}
-          />
-        )}
-        {nextClient && (
-          <PrevNextBtn
-            next
-            onClick={handleNextClient}
-            client={{ nom: nextClient.nom, prenom: nextClient.prenom }}
-          />
-        )}
-      </Grid>
+      <PrevNextSection
+        nextClient={nextClient!}
+        prevClient={prevClient!}
+        handleNext={handleNextClient}
+        handlePrev={handlePrevClient}
+      />
       <Grid
         item
         container
@@ -83,10 +69,12 @@ const Profil = () => {
         </Grid>
       </Grid>
       <FicheClient client={currentClient!} />
-      <Grid container justifyContent={"space-between"}>
-        <PrevNextBtn next={false} />
-        <PrevNextBtn next />
-      </Grid>
+      <PrevNextSection
+        nextClient={nextClient!}
+        prevClient={prevClient!}
+        handleNext={handleNextClient}
+        handlePrev={handlePrevClient}
+      />
     </Grid>
   );
 };
