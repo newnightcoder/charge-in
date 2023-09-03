@@ -77,7 +77,7 @@ const ChangeModal = () => {
   const modalContainerStyle = {
     position: "relative",
     backgroundColor: "white.main",
-    height: isAccessoire ? "max-content" : "85%",
+    height: "85%",
     width: isAccessoire ? "max-content" : { xs: "90%", md: "75%" },
     maxWidth: isAccessoire ? "750px" : "1200px",
     pt: 6,
