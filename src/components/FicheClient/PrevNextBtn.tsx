@@ -5,14 +5,19 @@ import { grey } from "@mui/material/colors";
 
 interface PrevNextBtnProps {
   next?: boolean;
+  onClick?: () => void;
+  client?: {
+    prenom: string;
+    nom: string;
+  };
 }
 
-const PrevNextBtn = ({ next }: PrevNextBtnProps) => {
+const PrevNextBtn = ({ next, onClick, client }: PrevNextBtnProps) => {
   return (
     <Grid container width="auto">
       {!next && (
         <Grid item>
-          <IconButton sx={{ pl: 0 }}>
+          <IconButton sx={{ pl: 0 }} onClick={onClick}>
             <NavigateBeforeIcon
               sx={{ fontSize: "2rem", color: "primary.main" }}
             />
@@ -32,13 +37,15 @@ const PrevNextBtn = ({ next }: PrevNextBtnProps) => {
           </Typography>
         </Grid>
         <Grid item>
-          <Typography fontWeight={400}>Prénom Nom</Typography>
+          <Typography fontWeight={400} width="10ch" noWrap>
+            {client?.nom}&nbsp;{client?.prenom}
+          </Typography>
         </Grid>
       </Grid>
 
       {next && (
         <Grid item>
-          <IconButton sx={{ pr: 0 }}>
+          <IconButton sx={{ pr: 0 }} onClick={onClick}>
             <NavigateNextIcon
               sx={{ fontSize: "2rem", color: "primary.main" }}
             />
