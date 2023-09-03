@@ -23,13 +23,11 @@ const Profil = () => {
   const [isFirstClient, setIsFirstClient] = useState(false);
 
   const handleNextClient = useCallback(() => {
-    console.log("clicking next");
     if (!nextClient) return setIsLastClient(true);
     setCurrentClient(nextClient);
   }, [nextClient]);
 
   const handlePrevClient = useCallback(() => {
-    console.log("clicking next");
     if (!prevClient) return setIsFirstClient(true);
     setCurrentClient(prevClient);
   }, [prevClient]);
