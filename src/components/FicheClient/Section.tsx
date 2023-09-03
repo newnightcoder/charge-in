@@ -6,17 +6,26 @@ interface SectionProps extends PropsWithChildren {
 }
 const Section = ({ children, span }: SectionProps) => {
   const sectionStyle = {
-    width: "inherit",
+    width: "100%",
     bgcolor: "#FFF",
     p: 4,
     borderRadius: "8px",
     display: "flex",
     flexDirection: "column",
     rowGap: "16px",
+    // overflowX: "scroll",
   };
 
   return (
-    <Grid container item sx={{ gridColumn: { xs: "", md: span ?? "" } }}>
+    <Grid
+      container
+      item
+      sx={{
+        gridColumn: { xs: "", md: span ?? "" },
+        borderRadius: "8px",
+        overflow: "auto",
+      }}
+    >
       <Paper elevation={2} sx={sectionStyle}>
         {children}
       </Paper>

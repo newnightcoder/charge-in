@@ -28,7 +28,14 @@ const SectionChoixClient = ({ borne }: SectionChoixClientProps) => {
     <Section span="1/3">
       <TitleSection title={section.title} />
 
-      <ChoixClient borne={borne} />
+      <Grid
+        container
+        item
+        className="styled-scrollbar-borne"
+        sx={{ overflowX: "auto", width: "100%" }}
+      >
+        <ChoixClient borne={borne} />
+      </Grid>
 
       <Grid item>
         <BaseBtn btnName={section.btnName} onClick={toggleModal} />

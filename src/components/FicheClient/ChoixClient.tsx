@@ -22,7 +22,10 @@ const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
 
   const containerStyle = {
     height: "min-content",
+    width: "100%",
+    minWidth: { sx: "unset", md: "750px" },
     flexDirection: { xs: "column", md: "row" },
+    flexWrap: { xs: "wrap", md: "nowrap" },
     alignItems: "center",
     justifyContent: "space-evenly",
     border: `1px solid ${isDefault ? "#369C96" : grey[400]}`,
@@ -73,7 +76,7 @@ const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
   };
 
   return (
-    <Grid container item className="styled-scrollbar-borne" sx={containerStyle}>
+    <Grid container item sx={containerStyle}>
       <Grid item sx={{ px: 4, py: 2 }}>
         <img src={borne ? borneImg : installerImg} alt="" />
       </Grid>
