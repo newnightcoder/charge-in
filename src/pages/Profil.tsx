@@ -2,6 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { FicheClient, PageTitle } from "../components";
+import { PrevNextBtn } from "../components/FicheClient";
 import { RootState } from "../store";
 
 const Profil = () => {
@@ -11,6 +12,10 @@ const Profil = () => {
 
   return (
     <Grid container direction={"column"} rowGap={3} sx={{ pb: 4 }}>
+      <Grid container justifyContent={"space-between"}>
+        <PrevNextBtn next={false} />
+        <PrevNextBtn next />
+      </Grid>
       <Grid
         item
         container
@@ -35,6 +40,10 @@ const Profil = () => {
         </Grid>
       </Grid>
       <FicheClient client={client!} />
+      <Grid container justifyContent={"space-between"}>
+        <PrevNextBtn next={false} />
+        <PrevNextBtn next />
+      </Grid>
     </Grid>
   );
 };

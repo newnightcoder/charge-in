@@ -6,6 +6,7 @@ export { default as Document } from "./Document";
 export { default as Email } from "./Email";
 export { default as InfoDetail } from "./InfoDetail";
 export { default as Phone } from "./Phone";
+export { default as PrevNextBtn } from "./PrevNextBtn";
 export { default as Section } from "./Section";
 export { default as SectionAccessoires } from "./SectionAccessoires";
 export { default as SectionChoixClient } from "./SectionChoixClient";
