@@ -32,7 +32,7 @@ const PrevNextBtn = ({ next }: PrevNextBtnProps) => {
           </Typography>
         </Grid>
         <Grid item>
-          <Typography fontWeight={500}>Prénom Nom</Typography>
+          <Typography fontWeight={400}>Prénom Nom</Typography>
         </Grid>
       </Grid>
 
