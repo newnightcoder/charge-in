@@ -14,6 +14,7 @@ const Menu = ({ isCollapsed }: MenuProps) => {
   const isMenuOpen = useSelector((state: RootState) => state.menu.isMenuOpen);
   const navigate = useNavigate();
   const sections = ["opportunités", "utilisateurs", "données"];
+
   const menuStyle = {
     height: "auto",
     width: { xs: "80%", md: 280 },

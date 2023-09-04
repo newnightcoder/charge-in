@@ -9,12 +9,6 @@ import useWindowSize from "../hooks/useWindowSize";
 
 const PageContainer = styled(Box)(({ theme }) => ({
   height: "100vh",
-  // display: "grid",
-  // gridTemplateColumns: "minmax(200px, 280px) 1fr",
-  // [theme.breakpoints.down("md")]: {
-  //   gridTemplateColumns: "1fr",
-  // },
-
   display: "flex",
   overflow: "hidden",
 }));
@@ -60,15 +54,24 @@ const Dashboard = () => {
     gap: 3,
   };
 
+  const handleCollapse = (
+    bool: boolean,
+    ref: React.RefObject<HTMLDivElement>
+  ) => {
+    if (bool) {
+      ref!.current!.style.width = "0";
+      return setIsCollapsed(true);
+    }
+    ref!.current!.style.width = "280px";
+    return setIsCollapsed(false);
+  };
+
   return (
     <PageContainer>
       <Box ref={ref} sx={menuContainerStyle}>
         <IconButton
           sx={{ position: "absolute", top: "5px", right: "7px", zIndex: "200" }}
-          onClick={() => {
-            ref!.current!.style.width = "0";
-            setIsCollapsed(true);
-          }}
+          onClick={() => handleCollapse(true, ref)}
         >
           <KeyboardDoubleArrowLeftIcon sx={{ color: "#FFF" }} />
         </IconButton>
@@ -78,7 +81,7 @@ const Dashboard = () => {
         className={"styled-scrollbar-dashboard"}
         sx={dashboardOuterContainerStyle}
       >
-        {isCollapsed && (
+        {isCollapsed && width > 900 && (
           <IconButton
             sx={{
               position: "absolute",
@@ -86,10 +89,7 @@ const Dashboard = () => {
               left: "7px",
               zIndex: "200",
             }}
-            onClick={() => {
-              ref!.current!.style.width = "280px";
-              setIsCollapsed(false);
-            }}
+            onClick={() => handleCollapse(false, ref)}
           >
             <KeyboardDoubleArrowRightIcon sx={{ color: "#000" }} />
           </IconButton>
