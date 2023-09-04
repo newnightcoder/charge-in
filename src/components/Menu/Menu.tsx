@@ -6,7 +6,11 @@ import { LogoText } from "../../components";
 import { RootState } from "../../store";
 import { menu, MenuBtn } from "../Buttons";
 
-const Menu = () => {
+interface MenuProps {
+  isCollapsed?: boolean;
+}
+
+const Menu = ({ isCollapsed }: MenuProps) => {
   const isMenuOpen = useSelector((state: RootState) => state.menu.isMenuOpen);
   const navigate = useNavigate();
   const sections = ["opportunités", "utilisateurs", "données"];
@@ -23,9 +27,9 @@ const Menu = () => {
     px: 3,
     transform: {
       xs: isMenuOpen ? "translateX(0)" : "translateX(-100%)",
-      md: "none",
+      md: isCollapsed ? "translateX(-100%)" : "translateX(0)",
     },
-    transition: "transform 500ms",
+    transition: "transform 300ms",
   };
 
   return (
