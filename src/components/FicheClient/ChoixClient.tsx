@@ -9,17 +9,16 @@ interface BorneProps {
   borne?: boolean;
 }
 
+const CustomDivider = styled(Box)(({ theme }) => ({
+  height: "150px",
+  width: "1px",
+  backgroundColor: grey[300],
+  [theme.breakpoints.down("md")]: {
+    height: "1px",
+    width: "75%",
+  },
+}));
 const ChoixClient = ({ isDefault, hover, borne }: BorneProps) => {
-  const CustomDivider = styled(Box)(({ theme }) => ({
-    height: "70%",
-    width: "1px",
-    backgroundColor: grey[300],
-    [theme.breakpoints.down("md")]: {
-      height: "1px",
-      width: "75%",
-    },
-  }));
-
   const containerStyle = {
     height: "min-content",
     width: "100%",
