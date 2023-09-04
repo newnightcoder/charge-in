@@ -70,7 +70,7 @@ const Dashboard = () => {
     <PageContainer>
       <Box ref={ref} sx={menuContainerStyle}>
         <IconButton
-          sx={{ position: "absolute", top: "5px", right: "7px", zIndex: "200" }}
+          sx={{ position: "absolute", top: "5px", right: "7px", zIndex: "150" }}
           onClick={() => handleCollapse(true, ref)}
         >
           <KeyboardDoubleArrowLeftIcon sx={{ color: "#FFF" }} />
@@ -87,7 +87,7 @@ const Dashboard = () => {
               position: "absolute",
               top: "5px",
               left: "7px",
-              zIndex: "200",
+              zIndex: "150",
             }}
             onClick={() => handleCollapse(false, ref)}
           >
