@@ -1,7 +1,7 @@
 import CloseIcon from "@mui/icons-material/Close";
 import LoopIcon from "@mui/icons-material/Loop";
 import { Grid, IconButton, Typography } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { PropsWithChildren, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ChoixAccessoire, ChoixClient } from ".";
 import { RootState } from "../../store";
@@ -91,6 +91,24 @@ const ChangeModal = () => {
     overflowX: "hidden",
   };
 
+  const BorneWrapper = ({ children }: PropsWithChildren) => {
+    return (
+      <Grid
+        container
+        item
+        className="styled-scrollbar-borne"
+        sx={{
+          overflowX: "auto",
+          width: "100%",
+          borderRadius: "8px",
+          "&:hover": { boxShadow: "0px 0px 21px -3px rgba(54,156,150,1)" },
+        }}
+      >
+        {children}
+      </Grid>
+    );
+  };
+
   useEffect(() => {
     if (modalRef.current) {
       modalRef.current.scrollTo(0, 0);
@@ -162,7 +180,12 @@ const ChangeModal = () => {
                   container
                   item
                   className="styled-scrollbar-borne"
-                  sx={{ overflowX: "auto", width: "100%", borderRadius: "8px" }}
+                  sx={{
+                    overflowX: "auto",
+                    width: "100%",
+                    borderRadius: "8px",
+                    boxShadow: "0px 0px 21px -3px rgba(54,156,150,1)",
+                  }}
                 >
                   <ChoixClient isDefault borne={isBorne} />
                 </Grid>
@@ -176,30 +199,15 @@ const ChangeModal = () => {
               >
                 <Typography fontWeight={600}>{modal.autres}</Typography>
 
-                <Grid
-                  container
-                  item
-                  className="styled-scrollbar-borne"
-                  sx={{ overflowX: "auto", width: "100%", borderRadius: "8px" }}
-                >
+                <BorneWrapper>
                   <ChoixClient hover borne={isBorne} />
-                </Grid>
-                <Grid
-                  container
-                  item
-                  className="styled-scrollbar-borne"
-                  sx={{ overflowX: "auto", width: "100%", borderRadius: "8px" }}
-                >
+                </BorneWrapper>
+                <BorneWrapper>
                   <ChoixClient hover borne={isBorne} />
-                </Grid>
-                <Grid
-                  container
-                  item
-                  className="styled-scrollbar-borne"
-                  sx={{ overflowX: "auto", width: "100%", borderRadius: "8px" }}
-                >
+                </BorneWrapper>
+                <BorneWrapper>
                   <ChoixClient hover borne={isBorne} />
-                </Grid>
+                </BorneWrapper>
               </Grid>
             </>
           )}
