@@ -31,8 +31,8 @@ const SectionChoixClient = ({ borne }: SectionChoixClientProps) => {
       <Grid
         container
         item
-        className="styled-scrollbar-borne"
-        sx={{ overflowX: "auto", width: "100%" }}
+        className="styled-scrollbar-modal"
+        sx={{ overflowX: "auto", width: "100%", borderRadius: "8px" }}
       >
         <ChoixClient borne={borne} />
       </Grid>
