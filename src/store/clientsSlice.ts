@@ -753,13 +753,13 @@ const initialState = {
       ],
     },
     {
-      prenom: "Kim",
-      nom: "Kardash",
+      prenom: "Lebron",
+      nom: "James",
       borne: 2,
       devis: null,
       etape: 4,
       contact: {
-        adresse: "1 rue Hollywood, 33100 Bordeaux",
+        adresse: "1 rue Lakers, 33100 Bordeaux",
         codePostal: 33100,
         tel: "01 23 45 67 89",
         email: "kim.kardash@gmail.com",

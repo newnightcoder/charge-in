@@ -193,6 +193,17 @@ const Tableau = () => {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
           labelRowsPerPage={"Lignes par page:"}
+          labelDisplayedRows={function defaultLabelDisplayedRows({
+            from,
+            to,
+            count,
+          }: {
+            from: number;
+            to: number;
+            count: number;
+          }) {
+            return `${from}–${to} de ${count !== -1 ? count : `plus de ${to}`}`;
+          }}
           sx={{
             ".MuiTablePagination-displayedRows, .MuiTablePagination-selectLabel":
               {
